@@ -1,0 +1,47 @@
+.form {
+    width: 90%;
+    margin: auto;
+    .prop {
+        font-family: "Josefin Sans", sans-serif;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    input,
+    textarea {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        color: $text-color-normal;
+        border: none;
+        padding: 7.5px;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+    button {
+        display: block;
+        background-image: $theme-gradation-green;
+        padding: 2px;
+        border: none;
+        width: 125px;
+        height: 45px;
+        margin-bottom: 45px;
+        &:hover {
+            cursor: pointer;
+        }
+        .btn-text {
+            font-family: "Josefin Sans", sans-serif;
+            display: block;
+            background-color: #222;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            line-height: 45px;
+            font-size: 20px;
+            margin: 0;
+            color: $text-color-normal;
+        }
+    }
+}

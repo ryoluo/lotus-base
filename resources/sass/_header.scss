@@ -1,0 +1,99 @@
+header {
+    background-image: $theme-gradation-green;
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 75px;
+        padding: 0 2.5%;
+        max-width: 1024px;
+        margin: auto;
+
+        .logo-container {
+            width: 150px;
+            height: 56px;
+            z-index: 2;
+            position: relative;
+            .logo-icon {
+                display: block;
+                margin: auto;
+                width: 20%;
+            }
+            .logo-border {
+                position: absolute;
+                background-color: #ffffff;
+                height: 1px;
+                width: 33%;
+                top: 0;
+                margin-top: 12%;
+                &.left {
+                    left: 4%;
+                }
+                &.right {
+                    right: 4%;
+                }
+                &.short {
+                    margin-top: 15%;
+                    width: 25%;
+                    &.left {
+                        left: 14%;
+                    }
+                    &.right {
+                        right: 14%;
+                    }
+                }
+            }
+            .logo-text {
+                position: absolute;
+                font-size: 20px;
+                font-family: "Josefin Sans", sans-serif;
+                vertical-align: bottom;
+                text-align: center;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+        .h-btn {
+            width: 25px;
+            margin-right: 5px;
+            z-index: 2;
+            position: relative;
+            &:hover {
+                cursor: pointer;
+            }
+            .bar {
+                height: 2px;
+                border-radius: 1px;
+                background-color: #fff;
+                width: 25px;
+                transition: 0.5s;
+                margin: 6.5px auto;
+            }
+            &.showNav {
+                padding: 5px 0;
+                .bar-top {
+                    transform: rotate(135deg);
+                    transition: 0.5s;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+                .bar-bottom {
+                    transform: rotate(-135deg);
+                    transition: 0.5s;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+                .bar-middle {
+                    width: 0;
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@mixin pc {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+html {
+    background-color: #222222;
+    font-size: 16px;
+    color: $text-color-normal;
+    font-family: $font-family;
+    line-height: 1.5;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+body.showNav {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+.view {
+    min-height: calc(100vh - 168px);
+    @include pc {
+        max-width: 1024px;
+        margin: auto;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: $text-color-header;
+    text-decoration: none;
+}
+article {
+    width: 95%;
+    margin: auto;
+}
+iframe {
+    max-width: 100%;
+}
+.page-title {
+    display: block;
+    width: 75%;
+    margin: 18px auto;
+    text-align: center;
+    background-image: #222;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: normal;
+    color: $text-color-header;
+    font-size: 24px;
+    line-height: 50px;
+    margin-bottom: 35px;
+    &::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $theme-color-green;
+        background-image: $theme-gradation-green;
+    }
+}
+.flex-wrapper {
+    display: flex;
+    .border {
+        width: 3px;
+        background-image: $theme-gradation-green;
+    }
+}
