@@ -8,9 +8,12 @@ html {
     font-size: 16px;
     color: $text-color-normal;
     font-family: $font-family;
-    line-height: 1.5;
+    line-height: 1.75;
     box-sizing: border-box;
     overflow-y: scroll;
+    @include pc {
+        font-style: 17px;
+    }
 }
 body.showNav {
     overflow: hidden;
@@ -52,7 +55,6 @@ iframe {
     color: $text-color-header;
     font-size: 24px;
     line-height: 50px;
-    margin-bottom: 35px;
     &::after {
         display: block;
         content: "";
@@ -68,4 +70,8 @@ iframe {
         width: 3px;
         background-image: $theme-gradation-green;
     }
+}
+.loader {
+    height: 100vh;
+    overflow-block: hidden;
 }

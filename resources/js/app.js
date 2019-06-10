@@ -7,12 +7,19 @@ require("./bootstrap");
 
 window.Vue = require("vue");
 
-// Prism.js
-var Prism = require("prismjs");
+var marked = require("marked");
+var Prism = require("./prism");
 
 // Vue-Router
 import router from "./router";
 import App from "./App.vue";
+
+// Vuex
+import Vuex from "vuex";
+Vue.use(Vuex);
+import store from "./store";
+window.store = store;
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -35,5 +42,24 @@ const app = new Vue({
     el: "#app",
     router,
     components: { App },
-    template: "<App />"
+    template: "<App />",
+    methods: {
+        setMeta: function(to) {
+            if (to.meta.title) {
+                let title = to.meta.title + " - Lotus Base";
+                document.title = title;
+            } else {
+                document.title = "Lotus Base";
+            }
+        }
+    },
+    mounted: function() {
+        var to = this.$route;
+        this.setMeta(to);
+    },
+    watch: {
+        $route(to, from) {
+            this.setMeta(to);
+        }
+    }
 });

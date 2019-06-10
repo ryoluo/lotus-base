@@ -2,7 +2,7 @@
   <div>
     <h1 class="page-title">Contact</h1>
     <div class="form">
-      <form action="#" @submit.prevent="submit">
+      <form action="#" @submit.prevent @submit="confirm()">
         <p class="prop">Name</p>
         <input type="text" v-model="name" id="name" required>
         <p class="prop">Email</p>
@@ -20,9 +20,9 @@
 export default {
   data() {
     return {
-      name: "",
-      email: "",
-      content: ""
+      name: "test",
+      email: "test@test.com",
+      content: "ryoryo",
     };
   },
   computed: {
@@ -44,7 +44,14 @@ export default {
         .catch(function() {
           console.log("notok");
         });
-    }
+    },
+    confirm() {
+      this.toggleShowModal()
+    },
+    toggleShowModal() {
+      store.commit('modal/toggleShow');
+      console.log(store.state.modal.showModal);
+    },
   }
 };
 </script>

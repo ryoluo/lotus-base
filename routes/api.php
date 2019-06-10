@@ -17,3 +17,6 @@ Route::post('/test', function(Request $request) {
     http_response_code();
     return $request;
 });
+
+Route::get('/posts/index', 'PostsController@index')->name('post.index');
+Route::get('/posts/{post}', 'PostsController@show')->name('post.show');

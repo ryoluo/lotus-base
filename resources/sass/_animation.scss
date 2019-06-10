@@ -8,3 +8,14 @@
 .view-fade-leave-to {
     opacity: 0;
 }
+
+.link-fade-enter-active {
+    transition: opacity 0.5s;
+}
+.link-fade-leave-active {
+    transition: opacity 0.5s;
+}
+.link-fade-enter,
+.link-fade-leave-to {
+    opacity: 0;
+}

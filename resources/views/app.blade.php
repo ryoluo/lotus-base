@@ -8,12 +8,13 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Scripts -->
-  <script src="{{ mix('js/app.js') }}" defer></script>
-  <script src="https://kit.fontawesome.com/602d6808cb.js"></script>
+  <script src="{{ mix('storage/js/app.js') }}" defer></script>
+  <!-- <script src="https://kit.fontawesome.com/602d6808cb.js"></script> -->
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+  <link href="{{ mix('storage/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
   <div id="app"></div>

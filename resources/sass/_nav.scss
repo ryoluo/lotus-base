@@ -3,14 +3,14 @@ nav {
     height: 100vh;
     position: absolute;
     background-color: rgba(34, 34, 34, 1);
-    z-index: 1;
+    z-index: 10;
     .links {
         margin: 87px auto 20px auto;
         list-style: none;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        max-width: 1024px;
+        max-width: 800px;
         .link {
             position: relative;
             display: block;
@@ -53,19 +53,25 @@ nav {
         margin: 25px 0;
         list-style: none;
         display: flex;
-        width: 75%;
+        width: calc(75% + 15px);
         justify-content: space-between;
         font-size: 26px;
         margin: auto;
-        max-width: 1024px * 0.5;
+        max-width: 950px * 0.9 * 0.5;
         .icon {
             .link {
                 display: inline-block;
                 line-height: 100%;
                 width: 30px;
                 text-align: center;
-                padding-top: 1.5px;
+                padding: 7.5px;
+                @include pc {
+                    padding: 10px;
+                }
                 .fab {
+                    @include pc {
+                        font-size: 110%;
+                    }
                     line-height: 100%;
                     color: $text-color-normal;
                 }

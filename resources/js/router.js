@@ -1,39 +1,52 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import List from "./pages/List.vue";
 import Home from "./pages/Home.vue";
 import About from "./pages/About.vue";
 import Blog from "./pages/Blog.vue";
 import Contact from "./pages/Contact.vue";
 import Works from "./pages/Works.vue";
+import Post from "./pages/Post.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: "/list",
-        component: List
-    },
-    {
         path: "/",
-        component: Home
+        component: Home,
     },
     {
         path: "/about",
-        component: About
+        component: About,
+        meta: {
+            title: "About"
+        }
     },
     {
         path: "/blog",
-        component: Blog
+        component: Blog,
+        meta: {
+            title: "Blog"
+        }
     },
     {
         path: "/Works",
-        component: Works
+        component: Works,
+        meta: {
+            title: "Works"
+        }
     },
     {
         path: "/Contact",
-        component: Contact
+        component: Contact,
+        meta: {
+            title: "Contact"
+        }
+    },
+    {
+        path: "/blog/post/:id",
+        name: "Post",
+        component: Post,
     }
 ];
 
