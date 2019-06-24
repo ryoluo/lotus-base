@@ -7,13 +7,14 @@ import Blog from "./pages/Blog.vue";
 import Contact from "./pages/Contact.vue";
 import Works from "./pages/Works.vue";
 import Post from "./pages/Post.vue";
+import NotFound from "./pages/NotFound.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: "/",
-        component: Home,
+        component: Home
     },
     {
         path: "/about",
@@ -44,9 +45,13 @@ const routes = [
         }
     },
     {
-        path: "/blog/post/:id",
+        path: "/blog/:id",
         name: "Post",
-        component: Post,
+        component: Post
+    },
+    {
+        path: "*",
+        component: NotFound
     }
 ];
 

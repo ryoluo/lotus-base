@@ -30,28 +30,6 @@
         padding: 5px 7.5px;
     }
     button {
-        display: block;
-        background-image: $theme-gradation-green;
-        padding: 2px;
-        border: none;
-        width: 125px;
-        height: 45px;
         margin-top: 30px;
-        // margin-bottom: 45px;
-        &:hover {
-            cursor: pointer;
-        }
-        .btn-text {
-            font-family: "Josefin Sans", sans-serif;
-            display: block;
-            background-color: #222;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-            line-height: 45px;
-            font-size: 19px;
-            margin: 0;
-            color: $text-color-normal;
-        }
     }
 }

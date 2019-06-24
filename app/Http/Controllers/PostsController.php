@@ -18,7 +18,7 @@ class PostsController extends Controller
     {
         http_response_code();
         return Post::where('is_ready', 1)
-        ->select('id', 'title', 'date', 'category_id')
+        ->select('id', 'title', 'date', 'path', 'category_id')
         ->orderBy('date', 'desc')
         ->with(['category' => function($query) {
             $query->select('id', 'name');

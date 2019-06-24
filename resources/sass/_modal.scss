@@ -1,0 +1,53 @@
+.modal-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #333333bb;
+    .modal {
+        box-sizing: border-box;
+        padding: 0 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 95%;
+        max-width: 540px;
+        height: fit-content;
+        background-color: #222;
+        z-index: 21;
+        box-shadow: 0 0 5px 1px #111;
+        margin: auto;
+        @include pc {
+            padding: 0 20px;
+            padding-bottom: 10px;
+        }
+        .modal-title {
+            font-family: $josefin;
+            font-weight: normal;
+            border-bottom: 2px solid #555;
+            margin: 15px 0;
+            font-size: 21px;
+        }
+        .email {
+            color: #ffffff;
+            font-size: 110%;
+            border-left: 5px solid #555;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+        }
+        .btn-wrapper {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            .btn-primary {
+                margin-right: 25px;
+            }
+        }
+    }
+}

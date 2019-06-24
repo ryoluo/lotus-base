@@ -13,10 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/test', function(Request $request) {
-    http_response_code();
-    return $request;
-});
+Route::post('/contact/submit', 'ContactController@submitMessage');
 
 Route::get('/posts/index', 'PostsController@index')->name('post.index');
 Route::get('/posts/{post}', 'PostsController@show')->name('post.show');

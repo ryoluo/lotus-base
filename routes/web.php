@@ -19,6 +19,12 @@ Route::get('/open/instagram', function() {
 Route::get('/open/github', function() {
     return view('github');
 });
+Route::get('/open/en2web', function() {
+    return view('en2web');
+});
+Route::get('/open/gsskt', function() {
+    return view('gsskt');
+});
 Route::get('/{any}', function () {
     return view('app');
 })->where('any', '.*');

@@ -6,6 +6,7 @@
 require("./bootstrap");
 
 window.Vue = require("vue");
+window.Hammer = require("./hammer");
 
 var marked = require("marked");
 var Prism = require("./prism");
@@ -14,11 +15,9 @@ var Prism = require("./prism");
 import router from "./router";
 import App from "./App.vue";
 
-// Vuex
-import Vuex from "vuex";
-Vue.use(Vuex);
-import store from "./store";
-window.store = store;
+// Eagle.js
+import Eagle from "eagle.js";
+Vue.use(Eagle);
 
 /**
  * The following block of code may be used to automatically register your
@@ -41,6 +40,7 @@ window.store = store;
 const app = new Vue({
     el: "#app",
     router,
+    // store,
     components: { App },
     template: "<App />",
     methods: {
@@ -48,14 +48,24 @@ const app = new Vue({
             if (to.meta.title) {
                 let title = to.meta.title + " - Lotus Base";
                 document.title = title;
+                document
+                    .querySelector("meta[property='og:title']")
+                    .setAttribute("content", to.meta.title);
             } else {
-                document.title = "Lotus Base";
+                let title = "LotusBase";
+                document.title = title;
+                document
+                    .querySelector("meta[property='og:title']")
+                    .setAttribute("content", title);
             }
+            let og_url = "https://lotus-base.com" + to.path;
+            document
+                .querySelector("meta[property='og:url']")
+                .setAttribute("content", og_url);
         }
     },
     mounted: function() {
-        var to = this.$route;
-        this.setMeta(to);
+        this.setMeta(this.$route);
     },
     watch: {
         $route(to, from) {

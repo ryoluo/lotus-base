@@ -4,7 +4,7 @@
     <ul class="posts-wrapper">
       <li v-for="post in posts" :key="post.id" class="post-item">
         <router-link class="router-link-img" :to="{ name: 'Post', params: { id: post.id } }">
-          <img class="post-img" :src="'/images/sample' + post.id + '.jpg'" alt>
+          <img class="post-img" :src="[ post.path !== null ? post.path : '/storage/img/logo-sumbnail-gradation.png']" alt>
         </router-link>
         <router-link :to="{ name: 'Post', params: { id: post.id } }" class="text">
           <p class="date">{{ post.date }}<span class="category-name">{{ post.category.name }}</span></p>

@@ -41,7 +41,7 @@
           <div v-on:click="hideNav" class="logo-container">
             <div class="logo-border left"></div>
             <div class="logo-border short left"></div>
-            <img class="logo-icon" src="/images/lotus2white.svg" alt="logo-lotus">
+            <img class="logo-icon" src="/storage/img/icon/lotus-icon-white.svg" alt="logo-img">
             <div class="logo-border right"></div>
             <div class="logo-border short right"></div>
             <p class="logo-text">Lotus Base</p>

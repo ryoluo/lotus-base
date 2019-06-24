@@ -1,6 +1,6 @@
 @import "../../node_modules/normalize.css/normalize.css";
-
-@import "valiables";
+@import "../../node_modules/animate.css/animate.css";
+@import "variables";
 @import "common";
 @import "header";
 @import "nav";
@@ -8,10 +8,14 @@
 @import "home";
 @import "about";
 @import "form";
+@import "works";
 @import "animation";
 @import "blog";
-@import "./fontawesome/fontawesome.scss";
-@import "./fontawesome/solid.scss";
-@import "./fontawesome/brands.scss";
+@import "notfound";
+@import "modal";
+@import "toast";
+// @import "./fontawesome/fontawesome.scss";
+// @import "./fontawesome/solid.scss";
+// @import "./fontawesome/brands.scss";
 @import "prism";
 @import "article";

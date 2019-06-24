@@ -46,8 +46,15 @@ article {
         }
     }
     h4 {
-        font-size: 18px;
+        font-size: 17px;
         font-weight: normal;
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        margin-bottom: 0;
+        background-color: #2d2d2d;
+        width: fit-content;
+        padding: 2px 12.5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
     h5 {
         font-size: 17px;
@@ -66,10 +73,15 @@ article {
             overflow-x: auto;
         }
     }
+    h4 + pre {
+        border-top-left-radius: 0;
+        margin-top: 0 !important;
+    }
     :not(pre) > code {
         background: #2d2d2d;
-        padding: 0.1em 5px;
+        padding: 0.2em 7px;
         border-radius: 3px;
+        color: #f8c555;
     }
     blockquote {
         margin: 0;

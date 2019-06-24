@@ -3,6 +3,11 @@
         @content;
     }
 }
+@mixin sp {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
 html {
     background-color: #222222;
     font-size: 16px;
@@ -27,6 +32,9 @@ body.showNav {
         margin: auto;
     }
 }
+main {
+    position: relative;
+}
 h1,
 h2,
 h3,
@@ -36,6 +44,29 @@ h6,
 a {
     color: $text-color-header;
     text-decoration: none;
+}
+hr {
+    width: 90%;
+    margin: auto;
+    background-image: $theme-gradation-green;
+    border: none;
+    height: 1px;
+}
+.wf-mplus1p {
+    font-family: "M PLUS 1p";
+}
+.wf-josefin {
+    font-family: $josefin;
+}
+.sp {
+    @include pc {
+        display: none !important;
+    }
+}
+.pc {
+    @include sp {
+        display: none !important;
+    }
 }
 article {
     width: 95%;
@@ -47,14 +78,14 @@ iframe {
 .page-title {
     display: block;
     width: 75%;
-    margin: 18px auto;
+    margin: 18px auto 30px;
     text-align: center;
-    background-image: #222;
+    background-color: #222;
     font-family: "Josefin Sans", sans-serif;
     font-weight: normal;
     color: $text-color-header;
-    font-size: 24px;
-    line-height: 50px;
+    font-size: 22px;
+    line-height: 44px;
     &::after {
         display: block;
         content: "";
@@ -74,4 +105,56 @@ iframe {
 .loader {
     height: 100vh;
     overflow-block: hidden;
+}
+.btn-wrapper {
+    display: flex;
+    button {
+        margin-right: 15px;
+    }
+}
+.btn-primary {
+    display: block;
+    background-image: $theme-gradation-green;
+    padding: 2px;
+    border: none;
+    width: 125px;
+    height: 45px;
+    &:hover {
+        cursor: pointer;
+    }
+    .btn-text {
+        font-family: "Josefin Sans", sans-serif;
+        display: block;
+        background-color: #222;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        line-height: 45px;
+        font-size: 19px;
+        margin: 0;
+        color: $text-color-normal;
+    }
+}
+.btn-secondary {
+    display: block;
+    background-color: #555;
+    padding: 2px;
+    border: none;
+    width: 125px;
+    height: 45px;
+    &:hover {
+        cursor: pointer;
+    }
+    .btn-text {
+        font-family: "Josefin Sans", sans-serif;
+        display: block;
+        background-color: #222;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        line-height: 45px;
+        font-size: 19px;
+        margin: 0;
+        color: $text-color-normal;
+    }
 }

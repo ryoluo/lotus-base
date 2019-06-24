@@ -1,0 +1,188 @@
+#works {
+    hr {
+        margin-bottom: 50px;
+    }
+    .item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-top: 35px;
+        @include pc {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .name {
+            display: block;
+            font-family: $josefin;
+            font-size: 21px;
+            margin: 0;
+            width: fit-content;
+            color: #fff;
+            padding: 6px 13px 0 15px;
+            background-color: #555;
+            box-shadow: 10px 10px 0 -3px $theme-color-green;
+            margin-bottom: 25px;
+            .fas {
+                font-size: 13px;
+                color: $text-color-normal;
+                vertical-align: top;
+                padding-top: 9px;
+                margin-left: 8px;
+            }
+            &.sp {
+                margin-bottom: 10px;
+            }
+        }
+        .jp {
+            font-family: "M PLUS 1p";
+            padding: 3.5px 13px 3.5px 15px;
+            font-size: 20px;
+            .fas {
+                padding-top: 11px;
+            }
+        }
+        .frameworks {
+            font-family: $josefin;
+            color: #fff;
+            font-size: 110%;
+            width: 100%;
+            &.sp {
+                margin-left: 5%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        .text {
+            width: 100%;
+            margin: auto;
+            @include pc {
+                width: 40%;
+            }
+            p {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                @include pc {
+                    // width: 100%;
+                }
+            }
+        }
+        .slideshow {
+            width: 100%;
+            margin-bottom: 10px;
+            @include pc {
+                margin-bottom: 0;
+                width: 55%;
+            }
+        }
+        .eg-slideshow {
+            background-color: #333333;
+            position: relative;
+            height: calc(100vw / 16 * 9 * 1.45);
+            @include pc {
+                height: 430px;
+            }
+            .eg-slide {
+                height: fit-content;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-bottom: 6%;
+                margin: auto;
+                @include pc {
+                    padding-bottom: 5%;
+                }
+                .img {
+                    position: relative;
+                    display: block;
+                    width: 90%;
+                    margin: auto;
+                    border-radius: 5px;
+                    max-width: 500px;
+                    box-shadow: 2px 2px 5px 1px #222;
+                    background-color: #fff;
+                    object-fit: cover;
+                }
+            }
+            .dots {
+                display: flex;
+                justify-content: space-around;
+                position: absolute;
+                width: fit-content;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                margin-bottom: 2%;
+                @include pc {
+                    margin-bottom: 1.5%;
+                }
+                .next,
+                .prev {
+                    display: none;
+                    @include pc {
+                        display: block;
+                        height: 36px;
+                        width: 36px;
+                        position: relative;
+                        .arrow {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            width: 6px;
+                            height: 6px;
+                            margin: auto;
+                            border-top: 1.5px solid $text-color-muted;
+                            border-right: 1.5px solid $text-color-muted;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .prev {
+                    .arrow {
+                        transform: rotate(-135deg);
+                    }
+                }
+                .next {
+                    .arrow {
+                        transform: rotate(45deg);
+                    }
+                }
+                .dot-wrapper {
+                    width: 30px;
+                    height: 30px;
+                    position: relative;
+                    @include pc {
+                        width: 36px;
+                        height: 36px;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .dot {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    width: 5px;
+                    height: 5px;
+                    margin: auto;
+                    border-radius: 100%;
+                    background-color: $text-color-muted;
+                    transition: 0.3s;
+                    &.active {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

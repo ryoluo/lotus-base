@@ -12,7 +12,7 @@ header {
         .logo-container {
             width: 150px;
             height: 56px;
-            z-index: 100;
+            z-index: 11;
             position: relative;
             .logo-icon {
                 display: block;
@@ -60,6 +60,7 @@ header {
         .tap-area {
             width: 35px;
             height: 35px;
+            z-index: 11;
             &:hover {
                 cursor: pointer;
             }
@@ -67,7 +68,6 @@ header {
         .h-btn {
             margin: 7px 0;
             height: 21px;
-            z-index: 100;
             position: relative;
             .bar {
                 position: absolute;

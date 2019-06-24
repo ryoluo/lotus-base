@@ -4,7 +4,7 @@
     <div class="upper">
       <div class="photo-and-name">
         <div class="img-wrapper">
-          <img class="myphoto" src="/images/myphoto.jpeg" alt="myphoto">
+          <img class="myphoto" src="/storage/img/myphoto.jpg" alt="myphoto">
         </div>
         <div class="name">
           <h3 class="name-en">Ryo Kobayashi</h3>
@@ -14,7 +14,7 @@
       <div class="message">
         <p class="message-top">写真のおしゃぶりしてる方が僕です。嘘です。</p>
         <p>ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。</p>
-        <p>2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も承っております。</p>
+        <p>2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。</p>
         <p class="message-bottom">
           お仕事の依頼は
           <router-link to="/contact">Contact</router-link>&nbsp;もしくは

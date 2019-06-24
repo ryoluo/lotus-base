@@ -51,7 +51,7 @@
         </transition>
       </div>
       <div class="link top">
-          <router-link class="router-link" to="/blog">Blog</router-link>
+          <router-link class="router-link" to="/blog">Back to Top</router-link>
       </div>
       <div class="link next">
         <transition name="link-fade">
@@ -109,6 +109,7 @@ export default {
       axios.get("/api/posts/" + this.$route.params.id).then(res => {
         this.post = res.data;
         document.title = res.data.title + " - Lotus Base"
+        document.querySelector("meta[property='og:title']").setAttribute('content', res.data.title);
       });
     },
   },

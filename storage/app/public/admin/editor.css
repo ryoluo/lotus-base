@@ -1,0 +1,36 @@
+#editor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-direction: row-reverse;
+}
+
+#editor .form,
+#editor .preview {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 5000px;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  #editor .form,
+  #editor .preview {
+    width: 50%;
+  }
+}
+
+#editor .form {
+  padding: 0 30px 10px 30px;
+}
+
+#editor .preview {
+  height: 100vh;
+  overflow: scroll;
+}
+
+#editor .router-link {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
