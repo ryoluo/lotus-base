@@ -38,6 +38,7 @@
         "eslint-plugin-node": "^9.1.0",
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-vue": "^5.2.2",
-        "marked": "^0.6.2"
+        "marked": "^0.6.2",
+        "vue-meta": "^2.0.4"
     }
 }

@@ -26,5 +26,9 @@ Route::get('/open/gsskt', function() {
     return view('gsskt');
 });
 Route::get('/{any}', function () {
-    return view('app');
+    $title = "test: Lotus Base";
+    if (request()->path() === 'about') {
+        $title = "test: About - {$title}";
+    };
+    return view('app', compact('title'));
 })->where('any', '.*');
