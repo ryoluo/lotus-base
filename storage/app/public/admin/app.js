@@ -1766,7 +1766,7 @@ __webpack_require__.r(__webpack_exports__);
       category_id: 0,
       status: 0,
       content: "",
-      path: ''
+      path: ""
     };
   },
   mounted: function mounted() {
@@ -1775,7 +1775,7 @@ __webpack_require__.r(__webpack_exports__);
     this.category_id = this.post.category_id;
     this.status = this.post.is_ready;
     this.content = this.post.content;
-    this.path = this.post.path !== null ? this.post.path : '/storage/img/post/.jpg';
+    this.path = this.post.path !== null ? this.post.path : "/storage/img/post/.jpg";
   },
   created: function created() {
     marked__WEBPACK_IMPORTED_MODULE_0___default.a.setOptions({
@@ -1802,7 +1802,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     action: function action() {
-      return '/posts/' + this.post.id;
+      return "/posts/" + this.post.id;
     }
   }
 });
@@ -75728,6 +75728,12 @@ var app = new Vue({
     }, _defineProperty(_ref, "date", null), _defineProperty(_ref, "path", '/storage/img/post/.jpg'), _ref;
   },
   created: function created() {
+    var renderer = new marked__WEBPACK_IMPORTED_MODULE_0___default.a.Renderer();
+
+    renderer.link = function (href, title, text) {
+      return "<a target=\"_blank\" href=\"".concat(href, "\" title=\"").concat(title, "\">").concat(text, "</a>");
+    };
+
     marked__WEBPACK_IMPORTED_MODULE_0___default.a.setOptions({
       langPrefix: "language-",
       highlight: function highlight(code, lang) {
@@ -75740,7 +75746,8 @@ var app = new Vue({
         } else {
           return code;
         }
-      }
+      },
+      renderer: renderer
     });
   },
   mounted: function mounted() {

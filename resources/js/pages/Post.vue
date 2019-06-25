@@ -51,7 +51,7 @@
         </transition>
       </div>
       <div class="link top">
-          <router-link class="router-link" to="/blog">Back to Top</router-link>
+        <router-link class="router-link" to="/blog">Back to Top</router-link>
       </div>
       <div class="link next">
         <transition name="link-fade">
@@ -81,6 +81,9 @@ export default {
   },
   created() {
     this.getPost();
+    const renderer = new marked.Renderer();
+    renderer.link = (href, title, text) =>
+      `<a target="_blank" href="${href}" title="${title}">${text}</a>`;
     new marked.setOptions({
       langPrefix: "language-",
       highlight: function(code, lang) {
@@ -92,7 +95,8 @@ export default {
         } else {
           return code;
         }
-      }
+      },
+      renderer: renderer
     });
   },
   mounted() {
@@ -108,17 +112,19 @@ export default {
       this.post = null;
       axios.get("/api/posts/" + this.$route.params.id).then(res => {
         this.post = res.data;
-        document.title = res.data.title + " - Lotus Base"
-        document.querySelector("meta[property='og:title']").setAttribute('content', res.data.title);
+        document.title = res.data.title + " - Lotus Base";
+        document
+          .querySelector("meta[property='og:title']")
+          .setAttribute("content", res.data.title);
       });
-    },
+    }
   },
   computed: {
     compiledMarkdown() {
       if (this.post.content != null) {
         return marked(this.post.content);
       } else {
-        return '';
+        return "";
       }
     }
   }

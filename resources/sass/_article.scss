@@ -32,6 +32,8 @@ article {
         position: relative;
         font-size: 21px;
         font-weight: normal;
+        margin-top: 40px;
+        margin-bottom: 25px;
         padding: 8px 6px 8px 16px;
         &::after {
             display: block;
@@ -93,9 +95,35 @@ article {
             border-width: 10px;
         }
     }
+    ul {
+        padding-bottom: 5px;
+        li {
+            margin: 15px 0;
+            list-style: none;
+            position: relative;
+        }
+        li::before {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0.7em;
+            left: 0;
+            margin-left: -1.2em;
+            width: 6px;
+            height: 6px;
+            transform: rotate(-45deg);
+            background-color: #ddd;
+        }
+    }
+    li > ul {
+        li::before {
+            border: 1px solid #ddd;
+            background-color: #222;
+        }
+    }
     img {
-        width: 95%;
-        max-width: 600px;
+        width: 90%;
+        max-width: 700px;
         display: block;
         margin: 20px auto;
         @include pc {
