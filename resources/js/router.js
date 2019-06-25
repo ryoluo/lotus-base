@@ -81,7 +81,7 @@ const router = new VueRouter({
     }
 });
 
-router.afterEach((to, from) => {
+router.beforeEach((to, from) => {
     setMeta(to);
 });
 
