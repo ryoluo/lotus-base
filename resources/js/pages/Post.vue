@@ -81,7 +81,7 @@ export default {
   },
   created() {
     this.getPost();
-    marked.setOptions({
+    new marked.setOptions({
       langPrefix: "language-",
       highlight: function(code, lang) {
         if (lang && lang.match(":")) {

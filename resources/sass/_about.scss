@@ -152,20 +152,16 @@
             }
         }
     }
-    .flex-wrapper {
-        .border {
-            background-image: $theme-gradation-green-2-rotate;
-            @include pc {
-                width: 5px;
-            }
-        }
-    }
     .title {
+        min-width: 110px;
         font-family: "Josefin Sans", sans-serif;
         font-weight: normal;
         width: fit-content;
-        margin: 10px 10px;
+        margin: 10px 0 17px;
+        padding: 4px 10px 2px;
         font-size: 17px;
+        box-shadow: 10px 10px 0 -3px $theme-color-green;
+        background-color: #555;
         @include pc {
             font-size: 19px;
         }

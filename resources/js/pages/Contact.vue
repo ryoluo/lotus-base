@@ -28,7 +28,7 @@
         </p>
       </div>
     </transition>
-    <h1 class="page-title" @click="toastSuccess">Contact</h1>
+    <h1 class="page-title">Contact</h1>
     <div class="form">
       <form @submit.prevent @submit="confirm()">
         <p class="prop">Name</p>
@@ -48,9 +48,9 @@
 export default {
   data() {
     return {
-      name: "小林　涼",
-      email: "kobayasi-ryo-ck@ynu.jp",
-      content: "これはテストです。",
+      name: "",
+      email: "",
+      content: "",
       displayModal: false,
       sending: false,
       displayToast: false,

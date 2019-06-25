@@ -8,8 +8,8 @@ require("./bootstrap");
 window.Vue = require("vue");
 window.Hammer = require("./hammer");
 
-var marked = require("marked");
-var Prism = require("./prism");
+window.marked = require("marked");
+window.Prism = require("./prism");
 
 // Vue-Router
 import router from "./router";

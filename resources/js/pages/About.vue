@@ -25,54 +25,29 @@
     <div class="introduction">
       <ul class="ul">
         <li class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Likes</h4>
-          </div>
+          <h4 class="title">Languages</h4>
+          <p class="detail">
+            PHP / JavaScript / Java
+            <br>ベトナム語 / 英語
+          </p>
+        </li>
+        <li class="li">
+          <h4 class="title">Frameworks</h4>
+          <p class="detail">Laravel / CakePHP / Vue.js / jQuery</p>
+        </li>
+        <li class="li">
+          <h4 class="title">Likes</h4>
           <p class="detail">踊れる音楽 / ベトナム / プログラミング</p>
         </li>
         <li class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Music</h4>
-          </div>
+          <h4 class="title">Music</h4>
           <p class="detail">
             House / DnB / Disco / K-pop, V-pop
             <br>Monstercat / Barong Family
           </p>
         </li>
         <li class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Languages</h4>
-          </div>
-          <p class="detail">
-            PHP / JavaScript / Java / Python
-            <br>ベトナム語 / ペルシア語（鋭意学習中）
-          </p>
-        </li>
-        <!-- <li class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Languages</h4>
-          </div>
-          <p class="detail">
-            PHP / JavaScript / Java / Python
-            <br>ベトナム語 / ペルシア語（鋭意学習中）
-          </p>
-        </li>-->
-        <li class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Frameworks</h4>
-          </div>
-          <p class="detail">Laravel / Vue.js / CakePHP / jQuery</p>
-        </li>
-        <li class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Experiences</h4>
-          </div>
+          <h4 class="title">Experiences</h4>
           <dl class="dl">
             <dt class="dt">2015.04</dt>
             <dd class="dd">横浜国立大学経済学部 入学</dd>
@@ -91,17 +66,17 @@
           </dl>
         </li>
         <dl class="li">
-          <div class="flex-wrapper">
-            <div class="border"></div>
-            <h4 class="title">Upcoming</h4>
-          </div>
+          <h4 class="title">Upcoming</h4>
           <dl class="dl">
             <dt class="dt">Before Graduation</dt>
             <dd class="dd">イランに行きたいです〜</dd>
             <dt class="dt">2020.03</dt>
-            <dd class="dd">卒業見込み（！）</dd>
+            <dd class="dd">卒業見込み</dd>
             <dt class="dt">2020.04</dt>
-            <dd class="dd">外資系企業に入社予定。Go！社畜Go！</dd>
+            <dd class="dd">
+              外資系企業に入社予定
+              <br>システム開発の上流工程に携わる見込みです
+            </dd>
           </dl>
         </dl>
       </ul>
