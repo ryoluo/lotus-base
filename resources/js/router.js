@@ -54,13 +54,35 @@ const routes = [
         component: NotFound
     }
 ];
-
+const setMeta = function(to) {
+    if (to.meta.title) {
+        let title = to.meta.title + " - Lotus Base";
+        document.title = title;
+        document
+            .querySelector("meta[property='og:title']")
+            .setAttribute("content", title);
+    } else {
+        let title = "Lotus Base";
+        document.title = title;
+        document
+            .querySelector("meta[property='og:title']")
+            .setAttribute("content", title);
+    }
+    let og_url = "https://lotus-base.com" + to.path;
+    document
+        .querySelector("meta[property='og:url']")
+        .setAttribute("content", og_url);
+}
 const router = new VueRouter({
     mode: "history",
     routes,
     scrollBehavior() {
         return { x: 0, y: 0 };
     }
+});
+
+router.afterEach((to, from) => {
+    setMeta(to);
 });
 
 export default router;
