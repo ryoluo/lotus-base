@@ -50,9 +50,9 @@ const app = new Vue({
                 document.title = title;
                 document
                     .querySelector("meta[property='og:title']")
-                    .setAttribute("content", to.meta.title);
+                    .setAttribute("content", title);
             } else {
-                let title = "LotusBase";
+                let title = "Lotus Base";
                 document.title = title;
                 document
                     .querySelector("meta[property='og:title']")

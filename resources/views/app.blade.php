@@ -12,7 +12,6 @@
   @include('favicon')
 
   <!-- OGP -->
-  <meta property="og:title" content="Lotus Base" />
   <meta property="og:url" content="https://lotus-base.com" />
   <meta property="og:image" content="https://lotus-base.com/storage/img/ogp/logo-fb.png" />
   <meta property="og:site_name" content="Lotus Base" />
