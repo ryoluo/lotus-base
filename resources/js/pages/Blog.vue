@@ -7,7 +7,7 @@
           <router-link class="router-link-img" :to="{ name: 'Post', params: { id: post.id } }">
             <img
               class="post-img"
-              :src="[ post.path !== null ? post.path : '/storage/img/logo-sumbnail-gradation.png']"
+              :src="[ post.path !== null ? post.path : '/img/logo-sumbnail-gradation.png']"
               alt
             >
           </router-link>

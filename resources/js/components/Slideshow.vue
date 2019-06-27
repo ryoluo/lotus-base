@@ -9,7 +9,7 @@
       leavePrev="slideOutRight"
       class="fast"
     >
-      <img :src="`/storage/img/works/${name}_${i}.png`" :alt="`${name}_${i}`" class="img">
+      <img :src="`/img/works/${name}_${i}.png`" :alt="`${name}_${i}`" class="img">
     </slide>
     <div class="dots">
       <div class="prev" @click="previousStep()">

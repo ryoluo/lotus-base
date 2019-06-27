@@ -4,7 +4,7 @@
     <div class="upper">
       <div class="photo-and-name">
         <div class="img-wrapper">
-          <img class="myphoto" src="/storage/img/myphoto.jpg" alt="myphoto">
+          <img class="myphoto" src="/img/myphoto.jpg" alt="myphoto">
         </div>
         <div class="name">
           <h3 class="name-en">Ryo Kobayashi</h3>

@@ -14,14 +14,14 @@
   <!-- OGP -->
   <meta property="og:title" content="{{ $title }}" />
   <meta property="og:url" content="https://lotus-base.com" />
-  <meta property="og:image" content="https://lotus-base.com/storage/img/ogp/logo-fb.png" />
+  <meta property="og:image" content="https://lotus-base.com/img/ogp/logo-fb.png" />
   <meta property="og:site_name" content="Lotus Base" />
   <meta property="og:description" content="Here is Ryo Kobayashi official website! I am a university student and currently working as a web engineer." />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ryoluo" />
 
   <!-- Scripts -->
-  <script src="{{ mix('storage/js/app.js') }}" defer></script>
+  <script src="{{ mix('/js/app.js') }}" defer></script>
   @if(app()->isLocal())
   <script src="https://kit.fontawesome.com/602d6808cb.js"></script>
   @endif
@@ -41,7 +41,7 @@
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
-  <link href="{{ mix('storage/css/app.css') }}" rel="stylesheet">
+  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
   <div id="app"></div>
