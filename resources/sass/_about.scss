@@ -94,11 +94,9 @@
         background-color: #222222;
         margin: 15px auto 30px auto;
         padding: 14px;
-        font-size: 15px;
         @include pc {
             width: 50%;
             margin: 30px auto;
-            font-size: 16px;
         }
         &::after,
         &::before {
@@ -130,7 +128,6 @@
         }
     }
     .introduction {
-        font-family: $yu-gothic;
         width: 95%;
         margin: auto;
         padding-bottom: 20px;
@@ -159,7 +156,7 @@
         width: fit-content;
         margin: 10px 0 17px;
         padding: 4px 10px 2px;
-        font-size: 17px;
+        font-size: 18px;
         box-shadow: 10px 10px 0 -3px $theme-color-green;
         background-color: #555;
         @include pc {
@@ -168,10 +165,10 @@
     }
     .detail {
         margin: 10px 5px 40px 14px;
-        font-size: 15px;
-        @include pc {
-            font-size: 16px;
-        }
+        // font-size: 16px;
+        // @include pc {
+        //     font-size: 17px;
+        // }
     }
     .dl {
         margin-top: 15px;
@@ -181,19 +178,17 @@
             font-family: "Josefin Sans", sans-serif;
             margin-bottom: 5px;
             color: #e8e8e8;
-            @include pc {
-                font-size: 17px;
-            }
+            font-size: 17px;
         }
         .dd {
             padding: 0;
             margin: 0;
             margin-bottom: 25px;
-            margin-left: 1rem;
-            font-size: 15px;
-            @include pc {
-                font-size: 16px;
-            }
+            margin-left: 0.5rem;
+            // font-size: 16px;
+            // @include pc {
+            //     font-size: 17px;
+            // }
         }
     }
 }

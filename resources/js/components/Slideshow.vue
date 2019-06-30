@@ -9,13 +9,13 @@
       leavePrev="slideOutRight"
       class="fast"
     >
-      <img :src="`/img/works/${name}_${i}.png`" :alt="`${name}_${i}`" class="img">
+      <img :src="`/img/works/${name}_${i}.png`" :alt="`${name}_${i}`" class="img" />
     </slide>
     <div class="dots">
       <div class="prev" @click="previousStep()">
         <div class="arrow" v-if="num > 1"></div>
       </div>
-      <div class="dot-wrapper" v-for="i in num" :key="i" @click="moveTo(i)">
+      <div class="dot-wrapper" v-for="i in num" :key="i">
         <div class="dot" :class="{active: i === currentSlideIndex}"></div>
       </div>
       <div class="next" @click="nextStep()">
@@ -39,6 +39,7 @@ export default {
     }
   },
   mounted() {
+    this.currentSlideIndex = 1;
     const hammer = new Hammer(this.$el);
     hammer.on("swiperight", () => {
       this.previousStep();
@@ -46,11 +47,6 @@ export default {
     hammer.on("swipeleft", () => {
       this.nextStep();
     });
-  },
-  methods: {
-    moveTo(nextSlideIndex) {
-      this.currentSlideIndex = nextSlideIndex;
-    }
   }
 };
 </script>

@@ -8,12 +8,18 @@
         @content;
     }
 }
+@mixin wider1024 {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
 html {
     background-color: #222222;
     font-size: 16px;
     color: $text-color-normal;
     font-family: $font-family;
     line-height: 1.75;
+    letter-spacing: 0.8pt;
     box-sizing: border-box;
     overflow-y: scroll;
     @include pc {

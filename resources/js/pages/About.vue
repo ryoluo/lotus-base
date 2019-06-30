@@ -4,7 +4,7 @@
     <div class="upper">
       <div class="photo-and-name">
         <div class="img-wrapper">
-          <img class="myphoto" src="/img/myphoto.jpg" alt="myphoto">
+          <img class="myphoto" src="/img/myphoto.jpg" alt="myphoto" />
         </div>
         <div class="name">
           <h3 class="name-en">Ryo Kobayashi</h3>
@@ -12,8 +12,7 @@
         </div>
       </div>
       <div class="message">
-        <p class="message-top">写真のおしゃぶりしてる方が僕です。嘘です。</p>
-        <p>ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。</p>
+        <p class="message-top">ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。</p>
         <p>2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。</p>
         <p class="message-bottom">
           お仕事の依頼は
@@ -28,7 +27,7 @@
           <h4 class="title">Languages</h4>
           <p class="detail">
             PHP / JavaScript / Java
-            <br>ベトナム語 / 英語
+            <br />ベトナム語 / 英語
           </p>
         </li>
         <li class="li">
@@ -43,7 +42,7 @@
           <h4 class="title">Music</h4>
           <p class="detail">
             House / DnB / Disco / K-pop, V-pop
-            <br>Monstercat / Barong Family
+            <br />Monstercat / Barong Family
           </p>
         </li>
         <li class="li">
@@ -56,12 +55,12 @@
             <dt class="dt">2019.02 - Now</dt>
             <dd class="dd">
               Webエンジニアインターン
-              <br>@Howtelevision, Inc.
+              <br />@Howtelevision, Inc.
             </dd>
             <dt class="dt">2019.06 - Now</dt>
             <dd class="dd">
               ベトナム語による事務業務補助
-              <br>@Ueda Trading Co., Ltd.
+              <br />@Ueda Trading Co., Ltd.
             </dd>
           </dl>
         </li>
@@ -75,7 +74,7 @@
             <dt class="dt">2020.04</dt>
             <dd class="dd">
               外資系企業に入社予定
-              <br>システム開発の上流工程に携わる見込みです
+              <br />システム開発の上流工程に携わる見込みです
             </dd>
           </dl>
         </dl>

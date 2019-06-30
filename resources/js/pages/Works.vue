@@ -11,6 +11,7 @@
         class="slideshow"
         :embedded="true"
         :mouseNavigation="false"
+        :keyboardNavigation="false"
         name="en2web"
         :num="6"
       />
@@ -32,7 +33,7 @@
         <i class="fas fa-external-link-alt"></i>
       </a>
       <p class="sp frameworks">CakePHP / jQuery / React</p>
-      <Slideshow class="slideshow" :embedded="true" :mouseNavigation="false" name="gsskt" :num="3"/>
+      <Slideshow class="slideshow" :embedded="true" :mouseNavigation="false" :keyboardNavigation="false" name="gsskt" :num="3"/>
       <div class="text">
         <a href="/open/gsskt" class="pc name jp" target="_blank">
           外資就活ドットコム

@@ -40,7 +40,6 @@
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
   <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>

@@ -39,16 +39,12 @@
       <div class="header-content">
         <router-link to="/">
           <div v-on:click="hideNav" class="logo-container">
-            <div class="logo-border left"></div>
-            <div class="logo-border short left"></div>
-            <img class="logo-icon" src="/img/icon/lotus-icon-white.svg" alt="logo-img">
-            <div class="logo-border right"></div>
-            <div class="logo-border short right"></div>
+            <img class="logo-img" src="/img/icon/lotus-logo.svg" alt />
             <p class="logo-text">Lotus Base</p>
           </div>
         </router-link>
         <div v-on:click="toggleNav" class="tap-area" v-bind:class="{showNav: showNav}">
-          <div  v-bind:class="{showNav: showNav}" class="h-btn">
+          <div v-bind:class="{showNav: showNav}" class="h-btn">
             <div class="bar bar-top"></div>
             <div class="bar bar-middle"></div>
             <div class="bar bar-bottom"></div>

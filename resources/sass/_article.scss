@@ -2,6 +2,7 @@ article {
     margin-top: 30px;
     margin-bottom: 30px;
     max-width: 750px;
+    word-break: break-all;
     .date {
         font-family: "Josefin Sans", sans-serif;
         margin-bottom: 5px;
@@ -66,11 +67,17 @@ article {
         font-size: 16px;
         font-weight: normal;
     }
+    code {
+        font-family: "Menlo", "Monaco", "Consolas", monospace !important;
+        font-weight: normal !important;
+    }
     pre {
+        font-family: "Menlo", "Monaco", "Consolas", monospace !important;
         background-color: #2d2d2d;
         overflow-x: scroll;
         padding: 12.5px;
         border-radius: 5px;
+        margin: 25px 0;
         @include pc {
             overflow-x: auto;
         }
@@ -81,7 +88,7 @@ article {
     }
     :not(pre) > code {
         background: #2d2d2d;
-        padding: 0.1em 5px;
+        padding: 0 5px;
         border-radius: 3px;
         color: #fff;
     }
@@ -94,6 +101,10 @@ article {
         @include pc {
             border-width: 10px;
         }
+    }
+    ul,
+    ol {
+        padding-left: 1.25em;
     }
     ul {
         padding-bottom: 5px;
