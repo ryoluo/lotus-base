@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
 
 class HtmlController extends Controller
 {
@@ -30,7 +31,7 @@ class HtmlController extends Controller
                     $title = "Blog - {$title}";
                 } else {
                     if (Post::where('id', $request_uri[1])->exists()) {
-                        $post = Post::where('id', $request_uri[1])->select('id', 'title', 'path')->get();
+                        $post = Post::where('id', $request_uri[1])->select('id', 'title', 'path')->first();
                         $title = "{$post->title} - {$title}";
                         $image_path = url('/') . $post->path;
                     }
