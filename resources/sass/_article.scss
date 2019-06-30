@@ -49,7 +49,7 @@ article {
         }
     }
     h4 {
-        font-size: 17px;
+        font-size: 15px;
         font-weight: normal;
         font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
         margin-bottom: 0;
@@ -58,6 +58,9 @@ article {
         padding: 2px 12.5px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        @include pc {
+            font-size: 16px;
+        }
     }
     h5 {
         font-size: 17px;
@@ -70,12 +73,13 @@ article {
     code {
         font-family: "Menlo", "Monaco", "Consolas", monospace !important;
         font-weight: normal !important;
+        font-size: 15px !important;
     }
     pre {
         font-family: "Menlo", "Monaco", "Consolas", monospace !important;
         background-color: #2d2d2d;
         overflow-x: scroll;
-        padding: 12.5px;
+        padding: 10px 12.5px;
         border-radius: 5px;
         margin: 25px 0;
         @include pc {
@@ -87,8 +91,8 @@ article {
         margin-top: 0 !important;
     }
     :not(pre) > code {
-        background: #2d2d2d;
-        padding: 0 5px;
+        background: #303030;
+        padding: 0.15em 7.5px 0.1em;
         border-radius: 3px;
         color: #fff;
     }
