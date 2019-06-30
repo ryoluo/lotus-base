@@ -13,8 +13,8 @@
 
   <!-- OGP -->
   <meta property="og:title" content="{{ $title }}" />
-  <meta property="og:url" content="https://lotus-base.com" />
-  <meta property="og:image" content="https://lotus-base.com/img/ogp/logo-fb.png" />
+  <meta property="og:url" content="{{ $url }}" />
+  <meta property="og:image" content="{{ $image_path }}" />
   <meta property="og:site_name" content="Lotus Base" />
   <meta property="og:description" content="Here is Ryo Kobayashi official website! I am a university student and currently working as a web engineer." />
   <meta name="twitter:card" content="summary_large_image">

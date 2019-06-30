@@ -25,10 +25,4 @@ Route::get('/open/en2web', function() {
 Route::get('/open/gsskt', function() {
     return view('gsskt');
 });
-Route::get('/{any}', function () {
-    $title = "test: Lotus Base";
-    if (request()->path() === 'about') {
-        $title = "test: About - {$title}";
-    };
-    return view('app', compact('title'));
-})->where('any', '.*');
+Route::get('/{any}', 'HtmlController@setOgp')->where('any', '.*');
