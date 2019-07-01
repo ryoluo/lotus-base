@@ -23,7 +23,8 @@ Vue.use(Eagle);
 import VueAnalytics from 'vue-analytics'
 
 Vue.use(VueAnalytics, {
-  id: 'UA-142698829-1'
+  id: 'UA-142698829-1',
+  router
 })
 
 /**
