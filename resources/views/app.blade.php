@@ -9,8 +9,6 @@
 
   <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-  @include('favicon')
-
   <!-- OGP -->
   <meta property="og:title" content="{{ $title }}" />
   <meta property="og:url" content="{{ $url }}" />
@@ -41,6 +39,9 @@
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+
+  <!-- Favicons -->
+  @include('favicon')
 </head>
 <body>
   <div id="app"></div>
