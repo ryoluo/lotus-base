@@ -19,6 +19,13 @@ import App from "./App.vue";
 import Eagle from "eagle.js";
 Vue.use(Eagle);
 
+// vue-analytics
+import VueAnalytics from 'vue-analytics'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-142698829-1'
+})
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

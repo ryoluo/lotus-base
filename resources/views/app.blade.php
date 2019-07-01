@@ -24,19 +24,6 @@
   <script src="https://kit.fontawesome.com/602d6808cb.js"></script>
   @endif
 
-  @if(!app()->isLocal())
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142698829-1"></script>
-  <script>
-    window.isLocal = app()->isLocal();
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-142698829-1');
-  </script>
-  @endif
-
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
