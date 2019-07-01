@@ -82,7 +82,7 @@ const router = new VueRouter({
 });
 
 router.afterEach((to, from) => {
-    if (!isLocal) {
+    if (!window.isLocal) {
         gtag('config', 'UA-142698829-1', {'page_path': to.path});    
     }
     setMeta(to);
