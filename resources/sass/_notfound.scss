@@ -1,27 +1,27 @@
 .not-found-container {
-    min-height: calc(100vh - 150px);
-    position: relative;
-    .not-found {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        display: flex;
-        height: fit-content;
-        width: fit-content;
-        .text {
-            margin: 0;
-            padding-top: 4px;
-            font-size: 22px;
-            font-family: $josefin;
-            height: fit-content;
-        }
-        .bar {
-            width: 3px;
-            background-image: $theme-gradation-green;
-            margin: 0 13px;
-        }
+  min-height: calc(100vh - 150px);
+  position: relative;
+  .not-found {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    .text {
+      margin: 0;
+      padding-top: 4px;
+      font-size: 22px;
+      font-family: $josefin;
+      height: fit-content;
     }
+    .bar {
+      width: 3px;
+      background-image: $theme-gradation-green;
+      margin: 0 13px;
+    }
+  }
 }

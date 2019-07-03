@@ -1,6 +1,6 @@
 $font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro",
-    "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック",
-    "MS PGothic", sans-serif;
+  "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック",
+  "MS PGothic", sans-serif;
 $josefin: "Josefin Sans", sans-serif;
 $theme-background: #222;
 $theme-color-green: #0b4941;
@@ -9,9 +9,9 @@ $theme-color-light-green: #03733a;
 // $theme-gradation-green: linear-gradient(-65deg, #162055, #008537);
 $theme-gradation-green: linear-gradient(-65deg, #16235f, #01913d);
 $theme-gradation-green-opacity: linear-gradient(
-    -65deg,
-    rgb(10, 31, 75),
-    rgb(2, 112, 66)
+  -65deg,
+  rgb(10, 31, 75),
+  rgb(2, 112, 66)
 );
 $theme-gradation-green-2: linear-gradient(-45deg, #017256, #08332d);
 $theme-gradation-green-2-rotate: linear-gradient(180deg, #017256, #08332d);

@@ -1,45 +1,45 @@
 @mixin pc {
-    @media (min-width: 768px) {
-        @content;
-    }
+  @media (min-width: 768px) {
+    @content;
+  }
 }
 @mixin sp {
-    @media (max-width: 767px) {
-        @content;
-    }
+  @media (max-width: 767px) {
+    @content;
+  }
 }
 @mixin wider1024 {
-    @media (min-width: 1024px) {
-        @content;
-    }
+  @media (min-width: 1024px) {
+    @content;
+  }
 }
 html {
-    background-color: #222222;
-    font-size: 16px;
-    color: $text-color-normal;
-    font-family: $font-family;
-    line-height: 1.75;
-    letter-spacing: 0.8pt;
-    box-sizing: border-box;
-    overflow-y: scroll;
-    @include pc {
-        font-style: 17px;
-    }
+  background-color: #222222;
+  font-size: 16px;
+  color: $text-color-normal;
+  font-family: $font-family;
+  line-height: 1.75;
+  letter-spacing: 0.8pt;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  @include pc {
+    font-style: 17px;
+  }
 }
 body.showNav {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 .view {
-    min-height: calc(100vh - 168px);
-    @include pc {
-        max-width: 1024px;
-        margin: auto;
-    }
+  min-height: calc(100vh - 168px);
+  @include pc {
+    max-width: 1024px;
+    margin: auto;
+  }
 }
 main {
-    position: relative;
+  position: relative;
 }
 h1,
 h2,
@@ -48,119 +48,119 @@ h4,
 h5,
 h6,
 a {
-    color: $text-color-header;
-    text-decoration: none;
+  color: $text-color-header;
+  text-decoration: none;
 }
 hr {
-    width: 90%;
-    margin: auto;
-    background-image: $theme-gradation-green;
-    border: none;
-    height: 1px;
+  width: 90%;
+  margin: auto;
+  background-image: $theme-gradation-green;
+  border: none;
+  height: 1px;
 }
 .wf-mplus1p {
-    font-family: "M PLUS 1p";
+  font-family: "M PLUS 1p";
 }
 .wf-josefin {
-    font-family: $josefin;
+  font-family: $josefin;
 }
 .sp {
-    @include pc {
-        display: none !important;
-    }
+  @include pc {
+    display: none !important;
+  }
 }
 .pc {
-    @include sp {
-        display: none !important;
-    }
+  @include sp {
+    display: none !important;
+  }
 }
 article {
-    width: 95%;
-    margin: auto;
+  width: 95%;
+  margin: auto;
 }
 iframe {
-    max-width: 100%;
+  max-width: 100%;
 }
 .page-title {
+  display: block;
+  width: 75%;
+  margin: 18px auto 30px;
+  text-align: center;
+  background-color: #222;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
+  color: $text-color-header;
+  font-size: 22px;
+  line-height: 44px;
+  &::after {
     display: block;
-    width: 75%;
-    margin: 18px auto 30px;
-    text-align: center;
-    background-color: #222;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: normal;
-    color: $text-color-header;
-    font-size: 22px;
-    line-height: 44px;
-    &::after {
-        display: block;
-        content: "";
-        width: 100%;
-        height: 3px;
-        background-color: $theme-color-green;
-        background-image: $theme-gradation-green;
-    }
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: $theme-color-green;
+    background-image: $theme-gradation-green;
+  }
 }
 .flex-wrapper {
-    display: flex;
-    .border {
-        width: 3px;
-        background-image: $theme-gradation-green;
-    }
+  display: flex;
+  .border {
+    width: 3px;
+    background-image: $theme-gradation-green;
+  }
 }
 .loader {
-    height: 100vh;
-    overflow-block: hidden;
+  height: 100vh;
+  overflow-block: hidden;
 }
 .btn-wrapper {
-    display: flex;
-    button {
-        margin-right: 15px;
-    }
+  display: flex;
+  button {
+    margin-right: 15px;
+  }
 }
 .btn-primary {
+  display: block;
+  background-image: $theme-gradation-green;
+  padding: 2px;
+  border: none;
+  width: 125px;
+  height: 45px;
+  &:hover {
+    cursor: pointer;
+  }
+  .btn-text {
+    font-family: "Josefin Sans", sans-serif;
     display: block;
-    background-image: $theme-gradation-green;
-    padding: 2px;
-    border: none;
-    width: 125px;
-    height: 45px;
-    &:hover {
-        cursor: pointer;
-    }
-    .btn-text {
-        font-family: "Josefin Sans", sans-serif;
-        display: block;
-        background-color: #222;
-        color: #fff;
-        width: 100%;
-        height: 100%;
-        line-height: 45px;
-        font-size: 19px;
-        margin: 0;
-        color: $text-color-normal;
-    }
+    background-color: #222;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    font-size: 19px;
+    margin: 0;
+    color: $text-color-normal;
+  }
 }
 .btn-secondary {
+  display: block;
+  background-color: #555;
+  padding: 2px;
+  border: none;
+  width: 125px;
+  height: 45px;
+  &:hover {
+    cursor: pointer;
+  }
+  .btn-text {
+    font-family: "Josefin Sans", sans-serif;
     display: block;
-    background-color: #555;
-    padding: 2px;
-    border: none;
-    width: 125px;
-    height: 45px;
-    &:hover {
-        cursor: pointer;
-    }
-    .btn-text {
-        font-family: "Josefin Sans", sans-serif;
-        display: block;
-        background-color: #222;
-        color: #fff;
-        width: 100%;
-        height: 100%;
-        line-height: 45px;
-        font-size: 19px;
-        margin: 0;
-        color: $text-color-normal;
-    }
+    background-color: #222;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    font-size: 19px;
+    margin: 0;
+    color: $text-color-normal;
+  }
 }

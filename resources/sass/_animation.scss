@@ -1,29 +1,29 @@
 .view-fade-enter-active {
-    transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 .view-fade-leave-active {
-    transition: opacity 0s;
+  transition: opacity 0s;
 }
 .view-fade-enter,
 .view-fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .link-fade-enter-active {
-    transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 .link-fade-leave-active {
-    transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 .link-fade-enter,
 .link-fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .fade-enter,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
