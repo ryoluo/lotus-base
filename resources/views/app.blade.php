@@ -16,9 +16,10 @@
   <meta property="og:image" content="{{ $image_path }}" />
   <meta property="og:site_name" content="Lotus Base" />
   <meta property="og:description" content="{{ $desc }}" />
+  <meta property="fb:app_id" content="313860199555739" />
   <meta name="twitter:site" content="@ryoluo" />
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="fb:app_id" content="313860199555739" />
+  
 
   <!-- Scripts -->
   <script src="{{ mix('/js/app.js') }}" defer></script>
