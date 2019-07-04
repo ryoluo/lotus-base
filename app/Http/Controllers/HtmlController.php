@@ -10,6 +10,7 @@ class HtmlController extends Controller
 {
     public function setOgp()
     {
+        $type = request()->url() === url('/') ? 'website' : 'article';
         $title = "Lotus Base";
         $url = request()->url();
         $image_path = url('/') . "/img/ogp/logo-fb.png";
@@ -40,6 +41,6 @@ class HtmlController extends Controller
                 }
                 break;
         }
-        return view('app', compact('title', 'url', 'image_path', 'desc'));
+        return view('app', compact('type', 'title', 'url', 'image_path', 'desc'));
     }
 }
