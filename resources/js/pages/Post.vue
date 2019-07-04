@@ -39,7 +39,7 @@
         <div v-html="compiledMarkdown"></div>
       </article>
     </transition>
-    <div class="blog-nav">
+    <div v-if="post" class="blog-nav">
       <div class="link pre">
         <transition name="link-fade">
           <div
