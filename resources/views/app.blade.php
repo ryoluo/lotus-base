@@ -18,6 +18,7 @@
   <meta property="og:description" content="{{ $desc }}" />
   <meta name="twitter:site" content="@ryoluo" />
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="fb:app_id" content="313860199555739" />
 
   <!-- Scripts -->
   <script src="{{ mix('/js/app.js') }}" defer></script>
