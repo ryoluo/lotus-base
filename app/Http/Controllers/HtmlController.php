@@ -35,7 +35,9 @@ class HtmlController extends Controller
                     if (Post::where('id', $request_uri[1])->exists()) {
                         $post = Post::where('id', $request_uri[1])->select('id', 'title', 'path', 'digest')->first();
                         $title = "{$post->title} - {$title}";
-                        $image_path = url('/') . $post->path;
+                        if (!empty($post->path)) {
+                            $image_path = url('/') . $post->path;
+                        }
                         $desc = $post->digest;
                     }
                 }
