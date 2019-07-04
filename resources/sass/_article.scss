@@ -1,8 +1,9 @@
 article {
   margin-top: 30px;
+  padding-bottom: 30px;
   margin-bottom: 30px;
   max-width: 750px;
-  word-break: break-all;
+  overflow-wrap: break-word;
   .date {
     font-family: "Josefin Sans", sans-serif;
     margin-bottom: 5px;
@@ -148,6 +149,12 @@ article {
     margin: 20px auto;
     @include pc {
       margin-left: 20px;
+    }
+    &.top {
+      max-width: 1024px !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
   }
   p.caption {

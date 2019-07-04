@@ -2,40 +2,28 @@
   <div id="home" class="en">
     <div class="lang-wrapper">
       <div class="lang" @click="toggleLang">
-        <p class="text">{{ text['lang'][lang] }}</p>
+        <p class="text">{{ text["lang"][lang] }}</p>
       </div>
     </div>
     <div class="catch-copy-wrapper">
-      <h2 class="catch-copy">{{ text['music'][lang] }}</h2>
-      <h2 class="catch-copy">{{ text['vietnam'][lang] }}</h2>
-      <h2 class="catch-copy">{{ text['technology'][lang] }}</h2>
-      <h2 class="catch-copy last">{{ text['and'][lang] }}</h2>
+      <h2 class="catch-copy">{{ text["music"][lang] }}</h2>
+      <h2 class="catch-copy">{{ text["vietnam"][lang] }}</h2>
+      <h2 class="catch-copy">{{ text["technology"][lang] }}</h2>
+      <h2 class="catch-copy last">{{ text["and"][lang] }}</h2>
     </div>
     <div class="intro">
       <div class="flex-wrapper">
         <div class="border"></div>
-        <h3 class="header3">{{ text['greeting'][lang] }}</h3>
+        <h3 class="header3">{{ text["greeting"][lang] }}</h3>
       </div>
-      <h4 class="header">{{ text['student'][lang] }}</h4>
-      <h4 class="header">{{ text['work'][lang] }}</h4>
-      <h4 class="header last">{{ text['website'][lang] }}</h4>
+      <h4 class="header">{{ text["student"][lang] }}</h4>
+      <h4 class="header">{{ text["work"][lang] }}</h4>
+      <h4 class="header last">{{ text["website"][lang] }}</h4>
     </div>
   </div>
 </template>
 <script>
 export default {
-  methods: {
-    toggleLang() {
-      const $home = document.getElementById("home");
-      $home.classList.toggle("vn");
-      $home.classList.toggle("en");
-      if (this.lang == "en") {
-        this.lang = "vn";
-      } else {
-        this.lang = "en";
-      }
-    }
-  },
   data() {
     return {
       lang: "en",
@@ -71,8 +59,9 @@ export default {
         },
         work: {
           en:
-            "Currently I'm working as a web-applcation engineer at Shibuya, Tokyo.",
-          vn: "Bây giờ tôi làm kỹ sư phần mềm ở một công ty tại Shibuya, Tokyo."
+            "Currently I'm working as a web-applcation engineer at Tokyo, Japan.",
+          vn:
+            "Bây giờ tôi làm kỹ sư phần mềm ở một công ty tại Tokyo, Nhật Bản."
         },
         website: {
           en:
@@ -82,6 +71,18 @@ export default {
         }
       }
     };
+  },
+  methods: {
+    toggleLang() {
+      const $home = document.getElementById("home");
+      $home.classList.toggle("vn");
+      $home.classList.toggle("en");
+      if (this.lang == "en") {
+        this.lang = "vn";
+      } else {
+        this.lang = "en";
+      }
+    }
   }
 };
 </script>
