@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Cookie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use App\Post;
 
 class PostsController extends Controller
@@ -29,8 +30,9 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         if (!$post->is_ready) {
-            return;
+            return app()->abort(404);
         }
+        http_response_code();
         $previous_post = Post::where('is_ready', 1)->where('date', '<', $post->date)->orderBy('date', 'desc')->first();
         $next_post = Post::where('is_ready', 1)->where('date', '>', $post->date)->orderBy('date', 'asc')->first();
         $post->previous_id = $previous_post ? $previous_post->id : 0;

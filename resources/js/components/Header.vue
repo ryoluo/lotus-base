@@ -3,16 +3,16 @@
     <transition name="fade">
       <nav v-show="showNav" class="nav">
         <ul class="links">
-          <li class="link" v-on:click="hideNav">
+          <li class="link" @click="hideNav">
             <router-link to="/about" class="text">About</router-link>
           </li>
-          <li class="link" v-on:click="hideNav">
+          <li class="link" @click="hideNav">
             <router-link to="/blog" class="text">Blog</router-link>
           </li>
-          <li class="link" v-on:click="hideNav">
+          <li class="link" @click="hideNav">
             <router-link to="/works" class="text">Works</router-link>
           </li>
-          <li class="link" v-on:click="hideNav">
+          <li class="link" @click="hideNav">
             <router-link to="/contact" class="text">Contact</router-link>
           </li>
         </ul>
@@ -38,13 +38,13 @@
     <header>
       <div class="header-content">
         <router-link to="/">
-          <div v-on:click="hideNav" class="logo-container">
+          <div class="logo-container" @click="hideNav">
             <img class="logo-img" src="/img/icon/lotus-logo.svg" alt />
             <p class="logo-text">Lotus Base</p>
           </div>
         </router-link>
-        <div v-on:click="toggleNav" class="tap-area" v-bind:class="{showNav: showNav}">
-          <div v-bind:class="{showNav: showNav}" class="h-btn">
+        <div class="tap-area" :class="{ showNav: showNav }" @click="toggleNav">
+          <div :class="{ showNav: showNav }" class="h-btn">
             <div class="bar bar-top"></div>
             <div class="bar bar-middle"></div>
             <div class="bar bar-bottom"></div>
@@ -76,4 +76,3 @@ export default {
   }
 };
 </script>
-

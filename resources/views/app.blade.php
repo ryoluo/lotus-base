@@ -17,6 +17,7 @@
   <meta property="og:site_name" content="Lotus Base" />
   <meta property="og:description" content="{{ $desc }}" />
   <meta name="twitter:site" content="@ryoluo" />
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Scripts -->
   <script src="{{ mix('/js/app.js') }}" defer></script>
