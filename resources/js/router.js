@@ -68,6 +68,16 @@ const setMeta = function(to) {
       .querySelector("meta[property='og:title']")
       .setAttribute("content", title);
   }
+  if (!to.path.match(/\/blog\/[0-9]+/)) {
+    let desc =
+      "Here is Ryo Kobayashi official website! I am a university student and currently working as a web engineer.";
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute("content", desc);
+    document
+      .querySelector("meta[property='og:description']")
+      .setAttribute("content", desc);
+  }
   let og_url = "https://lotus-base.com" + to.path;
   document
     .querySelector("meta[property='og:url']")

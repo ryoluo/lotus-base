@@ -2,7 +2,7 @@
   <div>
     <h1 class="page-title">Blog</h1>
     <ul class="posts-wrapper">
-      <li v-for="post in posts" class="section" :key="post.id">
+      <li v-for="post in posts" :key="post.id" class="section">
         <div class="post-item">
           <router-link
             class="router-link-img"
@@ -42,7 +42,7 @@ export default {
   },
   mounted() {
     document.addEventListener("touchstart", function() {}, { passive: true });
-    axios
+    this.$http
       .get("/api/posts/index")
       .then(response => (this.posts = response.data));
   }

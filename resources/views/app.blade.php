@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lotus Base</title>
-  <meta name="description" content="Here is Ryo Kobayashi official website! I am a university student and currently working as a web engineer." />
+  <meta name="description" content="{{ $desc }}" />
   <meta name="theme-color" content="#222222" />
 
   <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -14,7 +14,7 @@
   <meta property="og:url" content="{{ $url }}" />
   <meta property="og:image" content="{{ $image_path }}" />
   <meta property="og:site_name" content="Lotus Base" />
-  <meta property="og:description" content="Here is Ryo Kobayashi official website! I am a university student and currently working as a web engineer." />
+  <meta property="og:description" content="{{ $desc }}" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ryoluo" />
 

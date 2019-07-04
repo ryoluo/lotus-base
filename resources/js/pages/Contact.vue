@@ -8,11 +8,19 @@
           <p>入力されたメールアドレスが正しいことをご確認ください。</p>
           <p class="email">{{ email }}</p>
           <div class="btn-wrapper">
-            <button class="btn-primary" :disabled="sending" @click="sendMessage">
+            <button
+              class="btn-primary"
+              :disabled="sending"
+              @click="sendMessage"
+            >
               <p v-if="sending" class="btn-text">Sending...</p>
               <p v-else class="btn-text">Send</p>
             </button>
-            <button class="btn-secondary" :disabled="sending" @click="hideModal">
+            <button
+              class="btn-secondary"
+              :disabled="sending"
+              @click="hideModal"
+            >
               <p class="btn-text">Cancel</p>
             </button>
           </div>
@@ -20,7 +28,11 @@
       </div>
     </transition>
     <transition name="fade" type="out-in">
-      <div v-if="displayToast" class="toast" :class="{ 'toast-error': isErrorToast }">
+      <div
+        v-if="displayToast"
+        class="toast"
+        :class="{ 'toast-error': isErrorToast }"
+      >
         <p class="toast-message">
           {{ toastMessage1 }}
           <br />
@@ -77,7 +89,7 @@ export default {
     },
     sendMessage() {
       this.sending = true;
-      axios
+      this.$http
         .post("/api/contact/submit", this.params)
         .then(response => {
           this.hideModal();

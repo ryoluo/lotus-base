@@ -14,6 +14,7 @@ class HtmlController extends Controller
         $url = request()->url();
         $image_path = url('/') . "/img/ogp/logo-fb.png";
         $error_flag = false;
+        $desc = 'Here is Ryo Kobayashi official website! I am a university student and currently working as a web engineer.';
 
         $request_uri = explode('/', request()->path());
         switch ($request_uri[0]) {
@@ -34,10 +35,11 @@ class HtmlController extends Controller
                         $post = Post::where('id', $request_uri[1])->select('id', 'title', 'path')->first();
                         $title = "{$post->title} - {$title}";
                         $image_path = url('/') . $post->path;
+                        $desc = $post->digest;
                     }
                 }
                 break;
         }
-        return view('app', compact('title', 'url', 'image_path'));
+        return view('app', compact('title', 'url', 'image_path', 'desc'));
     }
 }

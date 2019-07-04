@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -8,21 +7,21 @@ require("./bootstrap");
 
 import Vue from "vue";
 
-// Vue-Router
 import router from "./router";
-import App from "./App.vue";
 
-// Eagle.js
 import Eagle from "eagle.js";
 Vue.use(Eagle);
 
-// vue-analytics
-import VueAnalytics from "vue-analytics";
+// import VeeValidate from "vee-validate";
+// Vue.use(VeeValidate);
 
+import VueAnalytics from "vue-analytics";
 Vue.use(VueAnalytics, {
   id: "UA-142986852-1",
   router
 });
+
+import App from "./App.vue";
 
 window.Hammer = require("./hammer");
 window.marked = require("marked");

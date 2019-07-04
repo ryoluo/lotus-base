@@ -3,11 +3,14 @@
     <div class="blog-nav">
       <div class="link pre">
         <transition name="link-fade">
-          <div class="router-link" v-if="!loading && (!post || post.previous_id)">
+          <div
+            v-if="!loading && (!post || post.previous_id)"
+            class="router-link"
+          >
             {{ prev }}
             <router-link
-              class="router-link-a"
               v-if="post && post.previous_id"
+              class="router-link-a"
               :to="{ name: 'Post', params: { id: post.previous_id } }"
             ></router-link>
           </div>
@@ -18,11 +21,11 @@
       </div>
       <div class="link next">
         <transition name="link-fade">
-          <div class="router-link" v-if="!loading && (!post || post.next_id)">
+          <div v-if="!loading && (!post || post.next_id)" class="router-link">
             {{ next }}
             <router-link
-              class="router-link-a"
               v-if="post && post.next_id"
+              class="router-link-a"
               :to="{ name: 'Post', params: { id: post.next_id } }"
             ></router-link>
           </div>
@@ -36,15 +39,17 @@
         <div v-html="compiledMarkdown"></div>
       </article>
     </transition>
-    <div class="loader" v-if="!post"></div>
     <div class="blog-nav">
       <div class="link pre">
         <transition name="link-fade">
-          <div class="router-link" v-if="!loading && (!post || post.previous_id)">
+          <div
+            v-if="!loading && (!post || post.previous_id)"
+            class="router-link"
+          >
             {{ prev }}
             <router-link
-              class="router-link-a"
               v-if="post && post.previous_id"
+              class="router-link-a"
               :to="{ name: 'Post', params: { id: post.previous_id } }"
             ></router-link>
           </div>
@@ -55,11 +60,11 @@
       </div>
       <div class="link next">
         <transition name="link-fade">
-          <div class="router-link" v-if="!loading && (!post || post.next_id)">
+          <div v-if="!loading && (!post || post.next_id)" class="router-link">
             {{ next }}
             <router-link
-              class="router-link-a"
               v-if="post && post.next_id"
+              class="router-link-a"
               :to="{ name: 'Post', params: { id: post.next_id } }"
             ></router-link>
           </div>
@@ -78,6 +83,20 @@ export default {
       prev: "< Prev",
       next: "Next >"
     };
+  },
+  computed: {
+    compiledMarkdown() {
+      if (this.post.content != null) {
+        return marked(this.post.content);
+      } else {
+        return "";
+      }
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.getPost();
+    }
   },
   created() {
     this.getPost();
@@ -102,30 +121,22 @@ export default {
   mounted() {
     this.loading = false;
   },
-  watch: {
-    $route(to, from) {
-      this.getPost();
-    }
-  },
   methods: {
     getPost() {
       this.post = null;
-      axios.get("/api/posts/" + this.$route.params.id).then(res => {
+      this.$http.get("/api/posts/" + this.$route.params.id).then(res => {
         this.post = res.data;
         document.title = res.data.title + " - Lotus Base";
         document
           .querySelector("meta[property='og:title']")
           .setAttribute("content", res.data.title);
+        document
+          .querySelector("meta[name='description']")
+          .setAttribute("content", res.data.digest);
+        document
+          .querySelector("meta[property='og:description']")
+          .setAttribute("content", res.data.digest);
       });
-    }
-  },
-  computed: {
-    compiledMarkdown() {
-      if (this.post.content != null) {
-        return marked(this.post.content);
-      } else {
-        return "";
-      }
     }
   }
 };
