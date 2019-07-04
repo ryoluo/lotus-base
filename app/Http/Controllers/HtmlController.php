@@ -33,7 +33,7 @@ class HtmlController extends Controller
                     $title = "Blog - {$title}";
                 } else {
                     if (Post::where('id', $request_uri[1])->exists()) {
-                        $post = Post::where('id', $request_uri[1])->select('id', 'title', 'path')->first();
+                        $post = Post::where('id', $request_uri[1])->select('id', 'title', 'path', 'digest')->first();
                         $title = "{$post->title} - {$title}";
                         $image_path = url('/') . $post->path;
                         $desc = $post->digest;
