@@ -16,6 +16,8 @@
   <meta property="og:image" content="{{ $image_path }}" />
   <meta property="og:site_name" content="Lotus Base" />
   <meta property="og:description" content="{{ $desc }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="fb:app_id" content="313860199555739" />
   <meta name="twitter:site" content="@ryoluo" />
   <meta name="twitter:card" content="summary_large_image">
