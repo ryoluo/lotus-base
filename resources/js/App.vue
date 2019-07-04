@@ -1,11 +1,11 @@
 <template>
   <div>
     <main>
-      <Header/>
+      <Header />
       <transition name="view-fade" mode="out-in">
-        <RouterView class="view"/>
+        <RouterView class="view" />
       </transition>
-      <Footer/>
+      <Footer />
     </main>
   </div>
 </template>

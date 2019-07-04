@@ -12,12 +12,17 @@
         </div>
       </div>
       <div class="message">
-        <p class="message-top">ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。</p>
-        <p>2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。</p>
+        <p class="message-top">
+          ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。
+        </p>
+        <p>
+          2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。
+        </p>
         <p class="message-bottom">
           お仕事の依頼は
           <router-link to="/contact">Contact</router-link>&nbsp;もしくは
-          <a href="/open/twitter" target="_blank">Twitter</a> からお願いいたします。
+          <a href="/open/twitter" target="_blank">Twitter</a>
+          からお願いいたします。
         </p>
       </div>
     </div>
@@ -85,4 +90,3 @@
 <script>
 export default {};
 </script>
-

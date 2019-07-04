@@ -1969,6 +1969,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1982,6 +1987,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2411,6 +2426,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Slideshow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Slideshow */ "./resources/js/components/Slideshow.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21682,7 +21704,7 @@ var block = {
     + ')',
   def: /^ {0,3}\[(label)\]: *\n? *<?([^\s>]+)>?(?:(?: +\n? *| *\n *)(title))? *(?:\n+|$)/,
   table: noop,
-  lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
+  lheading: /^([^\n]+)\n {0,3}(=|-){2,} *(?:\n+|$)/,
   paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading| {0,3}>|<\/?(?:tag)(?: +|\n|\/?>)|<(?:script|pre|style|!--))[^\n]+)*)/,
   text: /^[^\n]+/
 };
@@ -21865,14 +21887,21 @@ Lexer.prototype.token = function(src, top) {
 
     // code
     if (cap = this.rules.code.exec(src)) {
+      var lastToken = this.tokens[this.tokens.length - 1];
       src = src.substring(cap[0].length);
-      cap = cap[0].replace(/^ {4}/gm, '');
-      this.tokens.push({
-        type: 'code',
-        text: !this.options.pedantic
-          ? rtrim(cap, '\n')
-          : cap
-      });
+      // An indented code block cannot interrupt a paragraph.
+      if (lastToken && lastToken.type === 'paragraph') {
+        lastToken.text += '\n' + cap[0].trimRight();
+      } else {
+        cap = cap[0].replace(/^ {4}/gm, '');
+        this.tokens.push({
+          type: 'code',
+          codeBlockStyle: 'indented',
+          text: !this.options.pedantic
+            ? rtrim(cap, '\n')
+            : cap
+        });
+      }
       continue;
     }
 
@@ -22192,7 +22221,7 @@ var inline = {
   reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
   nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
   strong: /^__([^\s_])__(?!_)|^\*\*([^\s*])\*\*(?!\*)|^__([^\s][\s\S]*?[^\s])__(?!_)|^\*\*([^\s][\s\S]*?[^\s])\*\*(?!\*)/,
-  em: /^_([^\s_])_(?!_)|^\*([^\s*"<\[])\*(?!\*)|^_([^\s][\s\S]*?[^\s_])_(?!_|[^\spunctuation])|^_([^\s_][\s\S]*?[^\s])_(?!_|[^\spunctuation])|^\*([^\s"<\[][\s\S]*?[^\s*])\*(?!\*)|^\*([^\s*"<\[][\s\S]*?[^\s])\*(?!\*)/,
+  em: /^_([^\s_])_(?!_)|^\*([^\s*<\[])\*(?!\*)|^_([^\s<][\s\S]*?[^\s_])_(?!_|[^\spunctuation])|^_([^\s_<][\s\S]*?[^\s])_(?!_|[^\spunctuation])|^\*([^\s<"][\s\S]*?[^\s\*])\*(?!\*|[^\spunctuation])|^\*([^\s*"<\[][\s\S]*?[^\s])\*(?!\*)/,
   code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
   br: /^( {2,}|\\)\n(?!\s*$)/,
   del: noop,
@@ -22277,7 +22306,10 @@ inline.gfm.url = edit(inline.gfm.url, 'i')
 
 inline.breaks = merge({}, inline.gfm, {
   br: edit(inline.br).replace('{2,}', '*').getRegex(),
-  text: edit(inline.gfm.text).replace(/\{2,\}/g, '*').getRegex()
+  text: edit(inline.gfm.text)
+    .replace('\\b_', '\\b_| {2,}\\n')
+    .replace(/\{2,\}/g, '*')
+    .getRegex()
 });
 
 /**
@@ -22738,7 +22770,7 @@ TextRenderer.prototype.strong =
 TextRenderer.prototype.em =
 TextRenderer.prototype.codespan =
 TextRenderer.prototype.del =
-TextRenderer.prototype.text = function (text) {
+TextRenderer.prototype.text = function(text) {
   return text;
 };
 
@@ -22783,7 +22815,7 @@ Parser.prototype.parse = function(src) {
   // use an InlineLexer with a TextRenderer to extract pure text
   this.inlineText = new InlineLexer(
     src.links,
-    merge({}, this.options, {renderer: new TextRenderer()})
+    merge({}, this.options, { renderer: new TextRenderer() })
   );
   this.tokens = src.reverse();
 
@@ -22800,7 +22832,8 @@ Parser.prototype.parse = function(src) {
  */
 
 Parser.prototype.next = function() {
-  return this.token = this.tokens.pop();
+  this.token = this.tokens.pop();
+  return this.token;
 };
 
 /**
@@ -22944,7 +22977,7 @@ Parser.prototype.tok = function() {
  * Slugger generates header id
  */
 
-function Slugger () {
+function Slugger() {
   this.seen = {};
 }
 
@@ -22952,7 +22985,7 @@ function Slugger () {
  * Convert string to unique id
  */
 
-Slugger.prototype.slug = function (value) {
+Slugger.prototype.slug = function(value) {
   var slug = value
     .toLowerCase()
     .trim()
@@ -22978,11 +23011,11 @@ Slugger.prototype.slug = function (value) {
 function escape(html, encode) {
   if (encode) {
     if (escape.escapeTest.test(html)) {
-      return html.replace(escape.escapeReplace, function (ch) { return escape.replacements[ch]; });
+      return html.replace(escape.escapeReplace, function(ch) { return escape.replacements[ch]; });
     }
   } else {
     if (escape.escapeTestNoEncode.test(html)) {
-      return html.replace(escape.escapeReplaceNoEncode, function (ch) { return escape.replacements[ch]; });
+      return html.replace(escape.escapeReplaceNoEncode, function(ch) { return escape.replacements[ch]; });
     }
   }
 
@@ -23103,7 +23136,7 @@ function merge(obj) {
 function splitCells(tableRow, count) {
   // ensure that every cell-delimiting pipe has a space
   // before it to distinguish it from an escaped pipe
-  var row = tableRow.replace(/\|/g, function (match, offset, str) {
+  var row = tableRow.replace(/\|/g, function(match, offset, str) {
         var escaped = false,
             curr = offset;
         while (--curr >= 0 && str[curr] === '\\') escaped = !escaped;
@@ -23285,7 +23318,7 @@ marked.setOptions = function(opt) {
   return marked;
 };
 
-marked.getDefaults = function () {
+marked.getDefaults = function() {
   return {
     baseUrl: null,
     breaks: false,
@@ -24195,13 +24228,13 @@ var render = function() {
       _c("div", { staticClass: "message" }, [
         _c("p", { staticClass: "message-top" }, [
           _vm._v(
-            "ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。"
+            "\n        ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。\n      "
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。"
+            "\n        2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。\n      "
           )
         ]),
         _vm._v(" "),
@@ -24217,7 +24250,7 @@ var render = function() {
             _c("a", { attrs: { href: "/open/twitter", target: "_blank" } }, [
               _vm._v("Twitter")
             ]),
-            _vm._v(" からお願いいたします。\n      ")
+            _vm._v("\n        からお願いいたします。\n      ")
           ],
           1
         )
@@ -24569,7 +24602,7 @@ var render = function() {
                   expression: "name"
                 }
               ],
-              attrs: { type: "text", id: "name", required: "" },
+              attrs: { id: "name", type: "text", required: "" },
               domProps: { value: _vm.name },
               on: {
                 input: function($event) {
@@ -24592,7 +24625,7 @@ var render = function() {
                   expression: "email"
                 }
               ],
-              attrs: { type: "email", id: "email", required: "" },
+              attrs: { id: "email", type: "email", required: "" },
               domProps: { value: _vm.email },
               on: {
                 input: function($event) {
@@ -40106,11 +40139,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
-/* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
-/* harmony import */ var eagle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! eagle.js */ "./node_modules/eagle.js/dist/eagle.es.js");
-/* harmony import */ var vue_analytics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-analytics */ "./node_modules/vue-analytics/dist/vue-analytics.js");
-/* harmony import */ var vue_analytics__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_analytics__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
+/* harmony import */ var eagle_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! eagle.js */ "./node_modules/eagle.js/dist/eagle.es.js");
+/* harmony import */ var vue_analytics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-analytics */ "./node_modules/vue-analytics/dist/vue-analytics.js");
+/* harmony import */ var vue_analytics__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_analytics__WEBPACK_IMPORTED_MODULE_4__);
+/* eslint-disable no-undef */
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -40118,22 +40155,22 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-window.Hammer = __webpack_require__(/*! ./hammer */ "./resources/js/hammer.js");
-window.marked = __webpack_require__(/*! marked */ "./node_modules/marked/lib/marked.js");
-window.Prism = __webpack_require__(/*! ./prism */ "./resources/js/prism.js"); // Vue-Router
+ // Vue-Router
 
 
  // Eagle.js
 
 
-Vue.use(eagle_js__WEBPACK_IMPORTED_MODULE_2__["default"]); // vue-analytics
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(eagle_js__WEBPACK_IMPORTED_MODULE_3__["default"]); // vue-analytics
 
 
-Vue.use(vue_analytics__WEBPACK_IMPORTED_MODULE_3___default.a, {
-  id: 'UA-142986852-1',
-  router: _router__WEBPACK_IMPORTED_MODULE_0__["default"]
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_analytics__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  id: "UA-142986852-1",
+  router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
+window.Hammer = __webpack_require__(/*! ./hammer */ "./resources/js/hammer.js");
+window.marked = __webpack_require__(/*! marked */ "./node_modules/marked/lib/marked.js");
+window.Prism = __webpack_require__(/*! ./prism */ "./resources/js/prism.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -40149,14 +40186,13 @@ Vue.use(vue_analytics__WEBPACK_IMPORTED_MODULE_3___default.a, {
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-// Vue.prototype.$http = axios;
 
-var app = new Vue({
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$http = axios;
+new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app",
-  router: _router__WEBPACK_IMPORTED_MODULE_0__["default"],
-  // store,
+  router: _router__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    App: _App_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    App: _App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   template: "<App />"
 });

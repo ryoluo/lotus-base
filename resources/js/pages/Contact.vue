@@ -1,18 +1,18 @@
 <template>
   <div>
     <transition name="fade" type="out-in">
-      <div class="modal-wrapper" v-show="displayModal">
+      <div v-show="displayModal" class="modal-wrapper">
         <div class="modal">
           <h3 class="modal-title">Confirm</h3>
           <p>メッセージを送信します。</p>
           <p>入力されたメールアドレスが正しいことをご確認ください。</p>
           <p class="email">{{ email }}</p>
           <div class="btn-wrapper">
-            <button class="btn-primary" @click="sendMessage" v-bind:disabled="sending">
-              <p class="btn-text" v-if="sending">Sending...</p>
-              <p class="btn-text" v-else>Send</p>
+            <button class="btn-primary" :disabled="sending" @click="sendMessage">
+              <p v-if="sending" class="btn-text">Sending...</p>
+              <p v-else class="btn-text">Send</p>
             </button>
-            <button class="btn-secondary" @click="hideModal" v-bind:disabled="sending">
+            <button class="btn-secondary" :disabled="sending" @click="hideModal">
               <p class="btn-text">Cancel</p>
             </button>
           </div>
@@ -20,10 +20,10 @@
       </div>
     </transition>
     <transition name="fade" type="out-in">
-      <div class="toast" v-if="displayToast" v-bind:class="{'toast-error': isErrorToast}">
+      <div v-if="displayToast" class="toast" :class="{ 'toast-error': isErrorToast }">
         <p class="toast-message">
           {{ toastMessage1 }}
-          <br>
+          <br />
           {{ toastMessage2 }}
         </p>
       </div>
@@ -32,11 +32,11 @@
     <div class="form">
       <form @submit.prevent @submit="confirm()">
         <p class="prop">Name</p>
-        <input type="text" v-model="name" id="name" required>
+        <input id="name" v-model="name" type="text" required />
         <p class="prop">Email</p>
-        <input type="email" v-model="email" id="email" required>
+        <input id="email" v-model="email" type="email" required />
         <p class="prop">Content</p>
-        <textarea v-model="content" id="content" rows="10" required></textarea>
+        <textarea id="content" v-model="content" rows="10" required></textarea>
         <button class="submit btn-primary" type="submit">
           <p class="btn-text">Submit</p>
         </button>

@@ -26,14 +26,21 @@
         <p>個人として初めて本格的に製作したWebアプリでもあります。</p>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="item">
       <a href="/open/gsskt" class="sp name jp" target="_blank">
         外資就活ドットコム
         <i class="fas fa-external-link-alt"></i>
       </a>
       <p class="sp frameworks">CakePHP / jQuery / React</p>
-      <Slideshow class="slideshow" :embedded="true" :mouseNavigation="false" :keyboardNavigation="false" name="gsskt" :num="3"/>
+      <Slideshow
+        class="slideshow"
+        :embedded="true"
+        :mouseNavigation="false"
+        :keyboardNavigation="false"
+        name="gsskt"
+        :num="3"
+      />
       <div class="text">
         <a href="/open/gsskt" class="pc name jp" target="_blank">
           外資就活ドットコム
@@ -46,7 +53,7 @@
         <p>まわりのインターン生は上位校出身で就活無双している方が多いのですごいです。</p>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="item">
       <p class="sp name">In Development...</p>
       <p class="sp frameworks">Vue.js / UI Design</p>

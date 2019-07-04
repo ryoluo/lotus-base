@@ -12,77 +12,77 @@ import NotFound from "./pages/NotFound.vue";
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: "/",
-        component: Home
-    },
-    {
-        path: "/about",
-        component: About,
-        meta: {
-            title: "About"
-        }
-    },
-    {
-        path: "/blog",
-        component: Blog,
-        meta: {
-            title: "Blog"
-        }
-    },
-    {
-        path: "/Works",
-        component: Works,
-        meta: {
-            title: "Works"
-        }
-    },
-    {
-        path: "/Contact",
-        component: Contact,
-        meta: {
-            title: "Contact"
-        }
-    },
-    {
-        path: "/blog/:id",
-        name: "Post",
-        component: Post
-    },
-    {
-        path: "*",
-        component: NotFound
+  {
+    path: "/",
+    component: Home
+  },
+  {
+    path: "/about",
+    component: About,
+    meta: {
+      title: "About"
     }
+  },
+  {
+    path: "/blog",
+    component: Blog,
+    meta: {
+      title: "Blog"
+    }
+  },
+  {
+    path: "/Works",
+    component: Works,
+    meta: {
+      title: "Works"
+    }
+  },
+  {
+    path: "/Contact",
+    component: Contact,
+    meta: {
+      title: "Contact"
+    }
+  },
+  {
+    path: "/blog/:id",
+    name: "Post",
+    component: Post
+  },
+  {
+    path: "*",
+    component: NotFound
+  }
 ];
 const setMeta = function(to) {
-    if (to.meta.title) {
-        let title = to.meta.title + " - Lotus Base";
-        document.title = title;
-        document
-            .querySelector("meta[property='og:title']")
-            .setAttribute("content", title);
-    } else {
-        let title = "Lotus Base";
-        document.title = title;
-        document
-            .querySelector("meta[property='og:title']")
-            .setAttribute("content", title);
-    }
-    let og_url = "https://lotus-base.com" + to.path;
+  if (to.meta.title) {
+    let title = to.meta.title + " - Lotus Base";
+    document.title = title;
     document
-        .querySelector("meta[property='og:url']")
-        .setAttribute("content", og_url);
-}
+      .querySelector("meta[property='og:title']")
+      .setAttribute("content", title);
+  } else {
+    let title = "Lotus Base";
+    document.title = title;
+    document
+      .querySelector("meta[property='og:title']")
+      .setAttribute("content", title);
+  }
+  let og_url = "https://lotus-base.com" + to.path;
+  document
+    .querySelector("meta[property='og:url']")
+    .setAttribute("content", og_url);
+};
 const router = new VueRouter({
-    mode: "history",
-    routes,
-    scrollBehavior() {
-        return { x: 0, y: 0 };
-    }
+  mode: "history",
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
 });
 
 router.afterEach((to, from) => {
-    setMeta(to);
+  setMeta(to);
 });
 
 export default router;
