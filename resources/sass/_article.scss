@@ -34,7 +34,7 @@ article {
     position: relative;
     font-size: 21px;
     font-weight: normal;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 25px;
     padding: 8px 6px 8px 16px;
     &::after {
@@ -55,6 +55,8 @@ article {
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     margin-bottom: 0;
     background-color: #2d2d2d;
+    max-width: 80%;
+    word-break: break-all !important;
     width: fit-content;
     padding: 2px 12.5px;
     border-top-left-radius: 5px;
@@ -69,12 +71,16 @@ article {
     }
   }
   h5 {
-    font-size: 17px;
+    margin: 35px 0 0 0;
+    font-size: 18px;
     font-weight: normal;
   }
   h6 {
     font-size: 16px;
     font-weight: normal;
+  }
+  p {
+    margin-bottom: 0;
   }
   code {
     font-family: "Menlo", "Monaco", "Consolas", monospace !important;
@@ -103,10 +109,9 @@ article {
     color: #fff;
   }
   blockquote {
-    margin: 0;
-    padding: 1px 0 1px 10px;
-    // background-color: #2d2d2d;
-    border-left: 7.5px solid #2d2d2d;
+    margin: 20px 0 0 0;
+    padding: 1px 0 16px 10px;
+    border-left: 7px solid #2d2d2d;
     color: #aaa;
     @include pc {
       border-width: 10px;
@@ -115,11 +120,12 @@ article {
   ul,
   ol {
     padding-left: 1.35em;
+    padding-bottom: 10px;
+    margin: 25px 0 0 0;
   }
   ul {
-    padding-bottom: 5px;
     li {
-      margin: 15px 0;
+      margin: 15px 0 0 0;
       list-style: none;
       position: relative;
     }
@@ -146,7 +152,7 @@ article {
     width: 90%;
     max-width: 700px;
     display: block;
-    margin: 20px auto;
+    margin: 25px auto;
     @include pc {
       margin-left: 20px;
     }
@@ -177,6 +183,8 @@ article {
     }
   }
   table {
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-collapse: collapse;
     border-spacing: 0;
     overflow-x: scroll;
