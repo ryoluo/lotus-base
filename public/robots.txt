@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Disallow: /open/
+Sitemap: https://lotus-base.com/sitemap.xml
