@@ -35,6 +35,7 @@
 
   <!-- Favicons -->
   @include('favicon')
+  <meta name="google-site-verification" content="cAXvicN-GVyTPZb1y4tSO8M1YEEHvP6_grUW1LpZCz4" />
 </head>
 <body>
   <div id="app"></div>
