@@ -31,13 +31,13 @@
         <li class="li">
           <h4 class="title">Languages</h4>
           <p class="detail">
-            PHP / JavaScript / Java
+            JavaScript / PHP
             <br />ベトナム語 / 英語
           </p>
         </li>
         <li class="li">
           <h4 class="title">Frameworks</h4>
-          <p class="detail">Laravel / CakePHP / Vue.js / jQuery</p>
+          <p class="detail">Laravel / CakePHP / Vue.js / React</p>
         </li>
         <li class="li">
           <h4 class="title">Likes</h4>
@@ -46,7 +46,7 @@
         <li class="li">
           <h4 class="title">Music</h4>
           <p class="detail">
-            House / DnB / Disco / K-pop, V-pop
+            House / DnB / Disco / Hiphop / K-pop, V-pop
             <br />Monstercat / Barong Family
           </p>
         </li>
@@ -73,7 +73,7 @@
           <h4 class="title">Upcoming</h4>
           <dl class="dl">
             <dt class="dt">Before Graduation</dt>
-            <dd class="dd">イランに行きたいです〜</dd>
+            <dd class="dd">ウズベキスタンに行きたいです〜</dd>
             <dt class="dt">2020.03</dt>
             <dd class="dd">卒業見込み</dd>
             <dt class="dt">2020.04</dt>
