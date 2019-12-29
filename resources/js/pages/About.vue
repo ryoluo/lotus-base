@@ -12,12 +12,8 @@
         </div>
       </div>
       <div class="message">
-        <p class="message-top">
-          ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。
-        </p>
-        <p>
-          2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。
-        </p>
+        <p class="message-top">ご訪問ありがとうございます。横浜国立大学４年（５年目）の小林涼と申します。</p>
+        <p>2018年夏ごろからプログラミングを始め、現在Webエンジニアとしてはしゃぐように活動中です。ベトナムへの留学経験を活かしたベトナム語に関わる事務業務も行っています。</p>
         <p class="message-bottom">
           お仕事の依頼は
           <router-link to="/contact">Contact</router-link>&nbsp;もしくは
@@ -31,7 +27,7 @@
         <li class="li">
           <h4 class="title">Languages</h4>
           <p class="detail">
-            JavaScript / PHP
+            JavaScript / PHP / Go
             <br />ベトナム語 / 英語
           </p>
         </li>

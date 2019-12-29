@@ -32,7 +32,7 @@
         外資就活ドットコム
         <i class="fas fa-external-link-alt"></i>
       </a>
-      <p class="sp frameworks">CakePHP / jQuery / React</p>
+      <p class="sp frameworks">CakePHP / React / Go</p>
       <Slideshow
         class="slideshow"
         :embedded="true"
@@ -46,7 +46,7 @@
           外資就活ドットコム
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <p class="pc frameworks">CakePHP / jQuery / React</p>
+        <p class="pc frameworks">CakePHP / React / Go</p>
         <p>2019年2月より長期インターン（Webエンジニア）としてお世話になっています。</p>
         <p>新機能の開発や既存システムの保守運用、データ集計・分析、グロースハックなど幅広い業務に取り組んでいます。</p>
         <p>なお自身は就活を適当にしか行っていないため、就活についてはよく分かりません…(爆)</p>
