@@ -59,7 +59,7 @@ export default {
         },
         work: {
           en:
-            "Currently I'm working as a web-applcation engineer at Tokyo, Japan.",
+            "Currently I'm working as a web-application engineer at Tokyo, Japan.",
           vn:
             "Bây giờ tôi làm kỹ sư phần mềm ở một công ty tại Tokyo, Nhật Bản."
         },
