@@ -55,7 +55,7 @@ export default {
         },
         greeting: {
           en: "Hi! I'm Ryo Kobayashi.",
-          vn: "Xin chào! Tên tôi là Ryo Kobayashi."
+          vn: "Xin chào! Tôi là Ryo Kobayashi."
         },
         work: {
           en: "I'm a web-application engineer working at Tokyo, Japan.",
