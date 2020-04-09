@@ -1,24 +1,29 @@
 <template>
-  <div id="home" class="en">
+  <div id="home" :class="lang">
     <div class="lang-wrapper">
       <div class="lang" @click="toggleLang">
         <p class="text">{{ text["lang"][lang] }}</p>
       </div>
     </div>
-    <div class="catch-copy-wrapper">
-      <h2 class="catch-copy">{{ text["music"][lang] }}</h2>
-      <h2 class="catch-copy">{{ text["vietnam"][lang] }}</h2>
-      <h2 class="catch-copy">{{ text["technology"][lang] }}</h2>
-      <h2 class="catch-copy last">{{ text["and"][lang] }}</h2>
-    </div>
-    <div class="intro">
-      <div class="flex-wrapper">
-        <div class="border"></div>
-        <h3 class="header3">{{ text["greeting"][lang] }}</h3>
+    <div class="flex">
+      <div class="section">
+        <div class="catch-copy-wrapper">
+          <h2 class="catch-copy">{{ text["music"][lang] }}</h2>
+          <h2 class="catch-copy">{{ text["vietnam"][lang] }}</h2>
+          <h2 class="catch-copy">{{ text["technology"][lang] }}</h2>
+          <h2 class="catch-copy last">{{ text["and"][lang] }}</h2>
+        </div>
       </div>
-      <h4 class="header">{{ text["student"][lang] }}</h4>
-      <h4 class="header">{{ text["work"][lang] }}</h4>
-      <h4 class="header last">{{ text["website"][lang] }}</h4>
+      <div class="section">
+        <div class="intro">
+          <div class="flex-wrapper">
+            <div class="border"></div>
+            <h3 class="header3">{{ text["greeting"][lang] }}</h3>
+          </div>
+          <h4 class="header">{{ text["work"][lang] }}</h4>
+          <h4 class="header last">{{ text["website"][lang] }}</h4>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,18 +55,11 @@ export default {
         },
         greeting: {
           en: "Hi! I'm Ryo Kobayashi.",
-          vn: "Xin chào! Tôi là Ryo Kobayashi."
-        },
-        student: {
-          en:
-            "I'm a Japanese university student studying at Yokohama National University.",
-          vn: "Tôi là sinh viên của Trường đại học quốc lập Yokohama."
+          vn: "Xin chào! Tên tôi là Ryo Kobayashi."
         },
         work: {
-          en:
-            "Currently I'm working as a web-application engineer at Tokyo, Japan.",
-          vn:
-            "Bây giờ tôi làm kỹ sư phần mềm ở một công ty tại Tokyo, Nhật Bản."
+          en: "I'm a web-application engineer working at Tokyo, Japan.",
+          vn: "Tôi là kỹ sư phần mềm ở Tokyo, Nhật Bản."
         },
         website: {
           en:
@@ -74,9 +72,6 @@ export default {
   },
   methods: {
     toggleLang() {
-      const $home = document.getElementById("home");
-      $home.classList.toggle("vn");
-      $home.classList.toggle("en");
       if (this.lang == "en") {
         this.lang = "vn";
       } else {

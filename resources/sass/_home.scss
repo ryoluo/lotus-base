@@ -1,9 +1,20 @@
 #home {
   max-width: 950px;
   box-sizing: border-box;
-  min-height: calc(100vh - 150px);
+  .flex {
+    min-height: calc(100vh - 150px - 52px);
+    @include pc {
+      min-height: calc(100vh - 150px - 38px);
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+  }
+  .section {
+    width: 100%;
+  }
   .catch-copy-wrapper {
-    min-width: 256px;
+    min-width: 260px;
     width: fit-content;
     background-color: #555555;
     background-image: $theme-gradation-gray;
@@ -16,6 +27,7 @@
       width: 420px;
       margin-top: 0;
       padding: 10px 75px 10px 20px;
+      margin-bottom: 0;
     }
     .catch-copy {
       font-family: "Josefin Sans", sans-serif;
@@ -74,20 +86,21 @@
   }
   .intro {
     font-weight: normal;
-    padding-bottom: 30px;
+    padding-bottom: 36px;
     width: 95%;
     margin: auto;
     @include pc {
       width: fit-content;
       margin-top: 55px;
       margin-right: 20px;
-      padding-bottom: 40px;
+      padding-bottom: 72px;
       width: 600px;
       box-sizing: border-box;
     }
     .flex-wrapper {
       display: flex;
       @include pc {
+        margin-bottom: 36px;
         width: fit-content;
       }
     }
@@ -101,11 +114,12 @@
       }
     }
     .header {
-      font-weight: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
       color: $text-color-normal;
       @include pc {
         width: fit-content;
-        font-size: 19px;
+        font-size: 20px;
       }
       &.last {
         margin-bottom: 0;
