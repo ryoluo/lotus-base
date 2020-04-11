@@ -38,6 +38,10 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\AjaxFilter::class,
             'throttle:60,1',
             'bindings',
         ],
