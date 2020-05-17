@@ -36,6 +36,7 @@
   <!-- Favicons -->
   @include('favicon')
   <meta name="google-site-verification" content="cAXvicN-GVyTPZb1y4tSO8M1YEEHvP6_grUW1LpZCz4" />
+  <script data-ad-client="ca-pub-5787109833449075" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
   <div id="app"></div>
