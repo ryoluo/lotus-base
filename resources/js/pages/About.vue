@@ -13,19 +13,16 @@
       </div>
       <div class="message">
         <p class="message-top">
-          ご訪問ありがとうございます。小林涼と申します。
+          ご訪問ありがとうございます。サイト運営者の小林涼と申します。
         </p>
         <p>
-          大学時代にプログラミングを始め、現在ITエンジニアとしてはしゃぐように活動中です。
-        </p>
-        <p>
-          Webアプリ開発をはじめ、ブログ・HP制作、各種APIを利用したツールの作成等、様々な仕事を幅広く承っています。
+          大学在学中にプログラミングを始め、1年半のITエンジニアインターンシップを経験後、現在SAPコンサルタントとして活動中です。
         </p>
         <p class="message-bottom">
-          お仕事の依頼は
+          お問い合わせは
           <router-link to="/contact">Contact</router-link>&nbsp;もしくは
           <a href="/open/twitter" target="_blank">Twitter</a>
-          からお願いいたします。小さな案件でもお気軽にご相談ください！
+          からお願いいたします。
         </p>
       </div>
     </div>
@@ -34,56 +31,55 @@
         <li class="li">
           <h4 class="title">Languages</h4>
           <p class="detail">
+            ベトナム語 / 英語<br />
             JavaScript / PHP / Go / Python
-            <br />ベトナム語 / 英語
           </p>
         </li>
         <li class="li">
-          <h4 class="title">Frameworks</h4>
-          <p class="detail">Laravel / CakePHP / Vue.js / React</p>
+          <h4 class="title">Quolifications</h4>
+          <p class="detail">
+            基本情報技術者試験（2019.04）<br />
+            応用情報技術者試験（2019.10）
+          </p>
         </li>
-        <li class="li">
-          <h4 class="title">Likes</h4>
-          <p class="detail">踊れる音楽 / ベトナム / プログラミング</p>
-        </li>
-        <li class="li">
+        <!-- <li class="li">
           <h4 class="title">Music</h4>
           <p class="detail">
             House / DnB / Disco / Hiphop / K-pop, V-pop
             <br />Monstercat / Barong Family
           </p>
-        </li>
+        </li> -->
         <li class="li">
-          <h4 class="title">Experiences</h4>
+          <h4 class="title">Bio</h4>
           <dl class="dl">
             <dt class="dt">2015.04</dt>
             <dd class="dd">横浜国立大学経済学部 入学</dd>
             <dt class="dt">2017.07 - 2018.07</dt>
             <dd class="dd">ベトナム・ハノイ貿易大学 交換留学</dd>
-            <dt class="dt">2019.02 - Now</dt>
-            <dd class="dd">
-              Webエンジニアインターン
-              <br />@Howtelevision, Inc.
-            </dd>
+
+            <dt class="dt">2020.03</dt>
+            <dd class="dd">横浜国立大学経済学部 卒業</dd>
+          </dl>
+        </li>
+        <li class="li">
+          <h4 class="title">Experiences</h4>
+          <dl class="dl">
             <dt class="dt">2019.06 - 2020.03</dt>
             <dd class="dd">
               ベトナム語による事務業務補助
               <br />@Ueda Trading Co., Ltd.
             </dd>
-            <dt class="dt">2020.03</dt>
-            <dd class="dd">横浜国立大学経済学部 卒業</dd>
-          </dl>
-        </li>
-        <dl class="li">
-          <h4 class="title">Upcoming</h4>
-          <dl class="dl">
-            <dt class="dt">2020.08</dt>
+            <dt class="dt">2019.02 - 2020.07</dt>
             <dd class="dd">
-              外資系企業に入社予定
-              <br />コンサルタントとしてシステム開発等に携わる見込みです
+              ITエンジニアインターン
+              <br />@Howtelevision, Inc.
+            </dd>
+            <dt class="dt">2020.08 - Now</dt>
+            <dd class="dd">
+              SAPコンサルタント
             </dd>
           </dl>
-        </dl>
+        </li>
       </ul>
     </div>
   </div>

@@ -150,7 +150,7 @@
     }
   }
   .title {
-    min-width: 110px;
+    min-width: 130px;
     font-family: "Josefin Sans", sans-serif;
     font-weight: normal;
     width: fit-content;
@@ -165,6 +165,7 @@
   }
   .detail {
     margin: 10px 5px 40px 14px;
+    line-height: 2;
     // font-size: 16px;
     // @include pc {
     //     font-size: 17px;
