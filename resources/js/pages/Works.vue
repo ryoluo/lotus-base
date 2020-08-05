@@ -34,7 +34,7 @@
     <hr />
     <div class="item">
       <a href="/open/gsskt" class="sp name jp" target="_blank">
-        外資就活ドットコム
+        Howtelevision, inc.
         <i class="fas fa-external-link-alt"></i>
       </a>
       <p class="sp frameworks">CakePHP / React / Go</p>
