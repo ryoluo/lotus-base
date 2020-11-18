@@ -38,8 +38,9 @@
         <li class="li">
           <h4 class="title">Quolifications</h4>
           <p class="detail">
-            基本情報技術者試験（2019.04）<br />
-            応用情報技術者試験（2019.10）
+            基本情報技術者試験 (2019.04)<br />
+            応用情報技術者試験 (2019.10)<br />
+            AZ-900: Azure Fundamentals (2020.11)
           </p>
         </li>
         <!-- <li class="li">
