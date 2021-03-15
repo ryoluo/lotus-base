@@ -1,5 +1,6 @@
 @import "../../node_modules/normalize.css/normalize.css";
 @import "../../node_modules/animate.css/animate.css";
+@import "../../node_modules/prismjs/themes/prism-tomorrow.css";
 @import "variables";
 @import "common";
 @import "header";
@@ -14,5 +15,4 @@
 @import "notfound";
 @import "modal";
 @import "toast";
-@import "prism";
 @import "article";

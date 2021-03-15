@@ -41,7 +41,6 @@ export default {
     };
   },
   mounted() {
-    document.addEventListener("touchstart", function() {}, { passive: true });
     this.$http
       .get("/api/posts/index")
       .then(response => (this.posts = response.data));

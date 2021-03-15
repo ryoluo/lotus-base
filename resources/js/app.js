@@ -1,19 +1,9 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-require("./bootstrap");
-
 import Vue from "vue";
 
 import router from "./router";
 
 import Eagle from "eagle.js";
 Vue.use(Eagle);
-
-// import VeeValidate from "vee-validate";
-// Vue.use(VeeValidate);
 
 import VueAnalytics from "vue-analytics";
 Vue.use(VueAnalytics, {
@@ -23,26 +13,26 @@ Vue.use(VueAnalytics, {
 
 import App from "./App.vue";
 
-window.Hammer = require("./hammer");
-window.marked = require("marked");
-window.Prism = require("./prism");
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-go";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-markup-templating";
+import "prismjs/components/prism-php";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-sass";
+import "prismjs/components/prism-scss";
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import axios from "axios";
+axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+const token = document.head.querySelector('meta[name="csrf-token"]');
+if (token) {
+  axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
+} else {
+  console.error("CSRF token not found.");
+}
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 Vue.prototype.$http = axios;
 
 new Vue({

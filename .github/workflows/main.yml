@@ -30,4 +30,5 @@ jobs:
                php artisan config:cache && \
                php artisan migrate --force && \
                npm install && \
+               export NODE_OPTIONS="--max-old-space-size=512" && \
                npm run prod"

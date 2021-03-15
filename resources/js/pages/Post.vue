@@ -84,6 +84,7 @@
 </template>
 <script>
 import marked from "marked";
+import Prism from "prismjs";
 export default {
   data() {
     return {
@@ -115,7 +116,7 @@ export default {
       `<a target="_blank" href="${href}" title="${title}">${text}</a>`;
     new marked.setOptions({
       langPrefix: "language-",
-      highlight: function(code, lang) {
+      highlight: (code, lang) => {
         if (lang && lang.match(":")) {
           lang = lang.substring(0, lang.indexOf(":"));
         }
