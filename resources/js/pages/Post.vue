@@ -113,7 +113,7 @@ export default {
     this.getPost();
     const renderer = new marked.Renderer();
     renderer.link = (href, title, text) =>
-      `<a target="_blank" href="${href}" title="${title}">${text}</a>`;
+      `<a target="_blank" href="${href}" title="${href}">${text}</a>`;
     new marked.setOptions({
       langPrefix: "language-",
       highlight: (code, lang) => {
