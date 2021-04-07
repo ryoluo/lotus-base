@@ -23,12 +23,11 @@ jobs:
           ssh-keyscan -H ${SSH_ADDR} > known_hosts
           chmod 600 secret_key
           ssh ${SSH_USER}@${SSH_ADDR} -o UserKnownHostsFile=./known_hosts -i ./secret_key \
-              "cd ~/www/lotus-base && \
+              "cd ~/repos/lotus-base && \
                git checkout . && \
                git pull && \
                composer install && \
                php artisan config:cache && \
                php artisan migrate --force && \
                npm install && \
-               export NODE_OPTIONS="--max-old-space-size=512" && \
                npm run prod"
