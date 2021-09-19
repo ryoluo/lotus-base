@@ -13,4 +13,9 @@ class ContactController extends Controller
         Mail::to(config('const.MY_EMAIL'))->send(new ContactNotification($req));
         return http_response_code();
     }
+
+    public function getToken()
+    {
+        return http_response_code();
+    }
 }
