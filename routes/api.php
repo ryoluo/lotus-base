@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/token', 'ContactController@getToken');
 Route::post('/contact/submit', 'ContactController@submitMessage');
 
 Route::get('/posts/index', 'PostsController@index')->name('post.index');
