@@ -13,6 +13,7 @@ jobs:
       SSH_SECRET: ${{ secrets.SSH_SECRET }}
       SSH_USER: ${{ secrets.SSH_USER }}
       SSH_ADDR: ${{ secrets.SSH_ADDR }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
    
     steps:
       - uses: actions/checkout@v2
@@ -22,12 +23,10 @@ jobs:
           echo "$SSH_SECRET" > secret_key
           ssh-keyscan -H ${SSH_ADDR} > known_hosts
           chmod 600 secret_key
-          ssh ${SSH_USER}@${SSH_ADDR} -o UserKnownHostsFile=./known_hosts -i ./secret_key \
+          ssh ${SSH_USER}@${SSH_ADDR} -p ${SSH_PORT} -o UserKnownHostsFile=./known_hosts -i ./secret_key \
               "cd ~/repos/lotus-base && \
                git checkout . && \
                git pull && \
                composer install && \
                php artisan config:cache && \
-               php artisan migrate --force && \
-               npm install && \
-               npm run prod"
+               php artisan migrate --force
