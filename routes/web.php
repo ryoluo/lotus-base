@@ -10,3 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/redirect', function() {
+    return redirect(request()->query('to'));
+});
